@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aurean — Luxury Smart Ring Cloaks for Oura Ring</title>
-<meta name="description" content="Transform your Oura Ring into sculpted sterling silver jewelry. Aurean Cloak slides on in 3 seconds. Join the founders list for 15% off.">
+<title>Aurean — Sterling Silver Covers for Oura Ring</title>
+<meta name="description" content="Aurean Cloak transforms your Oura Ring into sculpted sterling silver jewelry. Slides on in 3 seconds. Join the founders list and save $10.">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Karla:wght@300;400;500&display=swap" rel="stylesheet">
 <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
 <style>
@@ -16,7 +16,6 @@
     --text-light: #F6F4F1;
     --text-muted: #7A756F;
     --border: #D6D1CB;
-    --red: #C4553A;
     --serif: 'Playfair Display', Georgia, serif;
     --sans: 'Karla', sans-serif;
   }
@@ -71,7 +70,7 @@
 
   .nav-cta:hover { opacity: 0.85; }
 
-  /* ========== HERO — Schwartz: Lead with problem, not solution ========== */
+  /* ========== HERO ========== */
   .hero {
     display: flex;
     flex-direction: column;
@@ -82,7 +81,6 @@
     margin: 0 auto;
   }
 
-  /* Social proof badge — builds trust before they even read */
   .hero-proof {
     display: inline-flex;
     align-items: center;
@@ -107,7 +105,6 @@
     animation: pulse 2s ease infinite;
   }
 
-  /* Problem-first headline — Schwartz awareness stage: problem-aware */
   .hero h1 {
     font-family: var(--serif);
     font-size: clamp(2.4rem, 5.5vw, 4rem);
@@ -120,10 +117,8 @@
 
   .hero h1 em {
     font-style: italic;
-    color: var(--text-muted);
   }
 
-  /* Halbert: conversational, specific, not ad-copy */
   .hero p {
     font-size: 1.05rem;
     color: var(--text-muted);
@@ -134,7 +129,6 @@
     animation: fadeUp 0.8s ease 0.35s forwards;
   }
 
-  /* CTA with scarcity language */
   .hero-cta-wrap {
     display: flex;
     flex-direction: column;
@@ -142,6 +136,7 @@
     gap: 0.5rem;
     opacity: 0;
     animation: fadeUp 0.8s ease 0.5s forwards;
+    margin-bottom: 3rem;
   }
 
   .hero-cta {
@@ -169,18 +164,18 @@
     color: var(--text-muted);
   }
 
-  /* ========== 3D MODEL — Dopamine hit #1: visual wow ========== */
+  /* ========== 3D MODEL ========== */
   .model-section {
-    max-width: 700px;
-    margin: 1rem auto 0;
-    padding: 0 2rem;
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 2rem 2rem 1rem;
     opacity: 0;
     animation: fadeUp 0.8s ease 0.6s forwards;
   }
 
   model-viewer {
     width: 100%;
-    height: 420px;
+    height: 480px;
     background: transparent;
     --poster-color: transparent;
     outline: none;
@@ -196,17 +191,18 @@
     font-size: 0.65rem;
     color: var(--text-muted);
     letter-spacing: 0.08em;
+    margin-top: 0.5rem;
   }
 
-  /* ========== PROBLEM SECTION — Schwartz: agitate the wound ========== */
-  .problem {
+  /* ========== ELEVATION SECTION ========== */
+  .elevation {
     max-width: 700px;
     margin: 0 auto;
     padding: 5rem 2rem 3rem;
     text-align: center;
   }
 
-  .problem-label {
+  .elevation-label {
     font-size: 0.65rem;
     font-weight: 500;
     letter-spacing: 0.25em;
@@ -215,7 +211,7 @@
     margin-bottom: 1.5rem;
   }
 
-  .problem h2 {
+  .elevation h2 {
     font-family: var(--serif);
     font-size: clamp(1.6rem, 4vw, 2.2rem);
     font-weight: 400;
@@ -224,7 +220,7 @@
     margin: 0 auto 1.5rem;
   }
 
-  .problem p {
+  .elevation p {
     font-size: 0.95rem;
     color: var(--text-muted);
     line-height: 1.8;
@@ -232,7 +228,7 @@
     margin: 0 auto;
   }
 
-  /* ========== FEATURES — Halbert: specific, clear, no fluff ========== */
+  /* ========== FEATURES ========== */
   .features {
     max-width: 900px;
     margin: 0 auto;
@@ -402,7 +398,7 @@
     font-weight: 400;
   }
 
-  /* ========== COMPETITOR ANCHOR — Price anchoring psychology ========== */
+  /* ========== PRICE ANCHOR ========== */
   .anchor-section {
     max-width: 600px;
     margin: 0 auto;
@@ -424,7 +420,7 @@
 
   .anchor-them {
     text-align: center;
-    opacity: 0.5;
+    opacity: 0.45;
   }
 
   .anchor-them .anchor-price {
@@ -477,7 +473,7 @@
     font-family: var(--serif);
   }
 
-  /* ========== WAITLIST — Dopamine hit #2: price reveal + scarcity ========== */
+  /* ========== WAITLIST ========== */
   .waitlist {
     background: var(--bg-dark);
     color: var(--text-light);
@@ -489,7 +485,6 @@
   .waitlist .section-title { color: var(--text-light); }
   .waitlist .section-subtitle { color: rgba(246, 244, 241, 0.6); }
 
-  /* Price display with anchor — crossed out original + discounted founders price */
   .price-display {
     margin: 1.5rem 0 0.5rem;
   }
@@ -673,7 +668,7 @@
     .specs-grid { grid-template-columns: 1fr; }
     .step { flex-direction: column; gap: 0.5rem; }
     .footer-links { flex-direction: column; gap: 0.75rem; }
-    model-viewer { height: 320px; }
+    model-viewer { height: 350px; }
     .anchor-compare { flex-direction: column; align-items: center; gap: 1rem; }
     .anchor-vs { padding-bottom: 0; }
   }
@@ -681,33 +676,30 @@
 </head>
 <body>
 
-  <!-- NAV — Always visible CTA -->
+  <!-- NAV -->
   <nav>
     <a href="#" class="nav-logo">Aurean</a>
-    <a href="#waitlist" class="nav-cta">Get 15% Off</a>
+    <a href="#waitlist" class="nav-cta">Join the Founders</a>
   </nav>
 
-  <!-- HERO
-    Psychology: Schwartz problem-aware hook + social proof badge + scarcity CTA
-    The headline leads with the PROBLEM (ugly Oura Ring) not the solution
-  -->
+  <!-- HERO — Enhancement language, not bashing -->
   <div class="hero">
     <div class="hero-proof">
       <span class="hero-proof-dot"></span>
       Designed for the 5.5M+ Oura Ring community
     </div>
 
-    <h1>You spent $300 on an Oura Ring. Why does it still look like <em>this?</em></h1>
+    <h1>The jewelry your Oura Ring was <em>always meant to wear.</em></h1>
 
-    <p>Aurean Cloak is a sterling silver jewelry piece that slides over your Oura Ring in 3 seconds. Your tech disappears. What's left is something people actually compliment.</p>
+    <p>Aurean Cloak is a collection of sterling silver covers that slide over your Oura Ring in 3 seconds. Your tech stays. The style transforms.</p>
 
     <div class="hero-cta-wrap">
       <a href="#waitlist" class="hero-cta">Join the Founders List</a>
-      <span class="hero-cta-sub">15% off for early members</span>
+      <span class="hero-cta-sub">Founders save $10 at launch</span>
     </div>
   </div>
 
-  <!-- 3D MODEL — Dopamine hit #1: visual wow -->
+  <!-- 3D MODEL — More space above and below, zoomed out further -->
   <div class="model-section">
     <model-viewer
       src="ring-model.glb"
@@ -722,7 +714,7 @@
       shadow-softness="0.9"
       exposure="1.1"
       environment-image="neutral"
-      camera-orbit="0deg 75deg 45m"
+      camera-orbit="0deg 75deg 60m"
       min-camera-orbit="auto auto auto"
       max-camera-orbit="auto auto auto"
       field-of-view="30deg"
@@ -731,14 +723,14 @@
     <p class="model-caption">Drag to rotate &middot; Design render &mdash; final product may vary slightly</p>
   </div>
 
-  <!-- PROBLEM AGITATION — Schwartz: twist the knife on the problem before offering the cure -->
-  <div class="problem">
-    <div class="problem-label">The problem</div>
-    <h2>The Oura Ring tracks everything about your health. But it looks like a $5 band from a vending machine.</h2>
-    <p>You wear it to dinner. To coffee. To meetings. Every day, on display. Yet nobody makes it look the way you actually dress. Until now.</p>
+  <!-- ELEVATION — Aspirational, not critical -->
+  <div class="elevation">
+    <div class="elevation-label">The idea</div>
+    <h2>Your Oura Ring already knows everything about your body. Now it can match the way you dress.</h2>
+    <p>You wear it everywhere — to coffee, to dinner, on every trip. Aurean Cloak gives it the presence it deserves. Sculpted sterling silver that looks like it was inherited, not ordered.</p>
   </div>
 
-  <!-- FEATURES — Halbert: specific numbers, not vague claims -->
+  <!-- FEATURES — Specific numbers -->
   <div class="features">
     <div class="feature">
       <div class="feature-num">3</div>
@@ -753,7 +745,7 @@
     <div class="feature">
       <div class="feature-num">925</div>
       <div class="feature-unit">Sterling silver</div>
-      <p>Rhodium-plated sterling silver with hand-sculpted liquid texture. Real jewelry, not a plastic cover.</p>
+      <p>Rhodium-plated sterling silver with a hand-sculpted liquid texture. Real jewelry, crafted to last.</p>
     </div>
   </div>
 
@@ -766,7 +758,7 @@
         <div class="step-num">1</div>
         <div>
           <h4>Slide</h4>
-          <p>Place the cloak over your Oura Ring from the top. The opening is designed to glide on smoothly without forcing.</p>
+          <p>Place the Cloak over your Oura Ring from the top. The opening is designed to glide on smoothly without forcing.</p>
         </div>
       </div>
       <div class="step">
@@ -780,7 +772,7 @@
         <div class="step-num">3</div>
         <div>
           <h4>Forget about it</h4>
-          <p>Your Oura Ring disappears underneath. What people see is sculpted sterling silver jewelry that looks like it was inherited, not ordered.</p>
+          <p>Your Oura Ring stays working underneath. What people see is sculpted sterling silver jewelry that looks like it's always been yours.</p>
         </div>
       </div>
     </div>
@@ -788,8 +780,8 @@
 
   <!-- PRODUCT GRID -->
   <div class="product-grid-section">
-    <h2 class="section-title" style="text-align: center;">The Cloak</h2>
-    <p class="section-subtitle" style="text-align: center;">Organic liquid-flow texture. Each one catches light differently.</p>
+    <h2 class="section-title" style="text-align: center;">The Collection</h2>
+    <p class="section-subtitle" style="text-align: center;">Organic liquid-flow texture. Each piece catches light differently.</p>
     <div class="product-grid">
       <div class="product-img wide">Hero lifestyle shot</div>
       <div class="product-img">Detail angle</div>
@@ -828,9 +820,9 @@
     </div>
   </div>
 
-  <!-- PRICE ANCHOR — Psychology: anchor against competitors to make your price feel like a steal -->
+  <!-- PRICE ANCHOR — Competitor comparison -->
   <div class="anchor-section">
-    <h2 class="section-title">Real jewelry. Not a luxury markup.</h2>
+    <h2 class="section-title">Sterling silver craftsmanship. Honest pricing.</h2>
     <div class="anchor-compare">
       <div class="anchor-them">
         <div class="anchor-price">$200+</div>
@@ -842,21 +834,20 @@
         <div class="anchor-label">Aurean Cloak</div>
       </div>
     </div>
-    <p class="anchor-note">Same craftsmanship. Sterling silver. Without the designer tax.</p>
+    <p class="anchor-note">Same quality materials. Without the designer markup.</p>
   </div>
 
-  <!-- WAITLIST — Dopamine hit #2: founders price reveal + scarcity + urgency -->
+  <!-- WAITLIST — Price anchor + founders pricing -->
   <div class="waitlist" id="waitlist">
     <div class="waitlist-badge">Founders Pricing &mdash; Limited Availability</div>
-    <h2 class="section-title">Get on the list.</h2>
-    <p class="section-subtitle">Early Founders lock in 15% off before we launch publicly.</p>
+    <h2 class="section-title">Join the Founders.</h2>
+    <p class="section-subtitle">Be first to order when we launch. Founders lock in $10 off.</p>
 
-    <!-- Price anchoring: show $68 crossed out, $58 founders price -->
     <div class="price-display">
       <span class="price-original">$68</span>
       <span class="price-founders">$58</span>
     </div>
-    <div class="price-savings">You save $10 as a founder</div>
+    <div class="price-savings">Founders save $10</div>
 
     <div class="form-container">
       <div class="form-group">
@@ -886,7 +877,7 @@
         <input type="text" placeholder="@yourusername">
       </div>
       <button class="submit-btn">Lock In My Founders Price</button>
-      <p class="form-note">No payment now. Just first access + 15% off when we launch.<br>Founders window closes when preorders open.</p>
+      <p class="form-note">No payment now. Just first access and $10 off when we launch.<br>Founders window closes when preorders open.</p>
     </div>
   </div>
 
