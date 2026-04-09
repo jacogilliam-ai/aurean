@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Aurean — Sterling Silver Covers for Oura Ring</title>
 <meta name="description" content="Aurean Cloak transforms your Oura Ring into sculpted sterling silver jewelry. Slides on in 3 seconds. Join the founders list and save $10.">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Karla:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Karla:wght@300;400;500&family=Lora:wght@400;500&display=swap" rel="stylesheet">
 <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
 <style>
   :root {
@@ -18,6 +18,7 @@
     --border: #D6D1CB;
     --serif: 'Playfair Display', Georgia, serif;
     --sans: 'Karla', sans-serif;
+    --price: 'Lora', Georgia, serif;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -90,7 +91,8 @@
     align-items: center;
     padding: 1.2rem 3rem;
     position: fixed;
-    top: 0; left: 0; right: 0;
+    top: 1.58rem;
+    left: 0; right: 0;
     z-index: 100;
     background: rgba(246, 244, 241, 0);
     backdrop-filter: blur(0px);
@@ -141,41 +143,46 @@
   .nav-cta:hover::after { transform: translateX(0); }
   .nav-cta:hover { transform: translateY(-1px); }
 
+  /* ========== EDITORIAL DATELINE STRIP ========== */
+  .dateline {
+    position: fixed;
+    top: 0;
+    left: 0; right: 0;
+    z-index: 99;
+    text-align: center;
+    padding: 0.45rem 2rem;
+    font-size: 0.58rem;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    transition: all 0.5s ease;
+    opacity: 0.7;
+  }
+
+  .dateline.scrolled {
+    background: rgba(246, 244, 241, 0.92);
+    backdrop-filter: blur(12px);
+  }
+
+  .dateline span {
+    margin: 0 0.4rem;
+    opacity: 0.4;
+  }
+
   /* ========== HERO ========== */
   .hero {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 10rem 2rem 2rem;
+    padding: 11rem 2rem 2rem;
     max-width: 820px;
     margin: 0 auto;
     min-height: 85vh;
     justify-content: center;
-  }
-
-  .hero-proof {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.68rem;
-    font-weight: 500;
-    letter-spacing: 0.1em;
-    color: var(--text-muted);
-    background: var(--bg-card);
-    padding: 0.5rem 1.2rem;
-    border-radius: 50px;
-    margin-bottom: 2.5rem;
-    opacity: 0;
-    animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
-  }
-
-  .hero-proof-dot {
-    width: 6px;
-    height: 6px;
-    background: #6B8F6B;
-    border-radius: 50%;
-    animation: pulse 2.5s ease infinite;
   }
 
   .hero h1 {
@@ -279,53 +286,6 @@
     letter-spacing: 0.03em;
   }
 
-  /* ========== SCROLL INDICATOR ========== */
-  .scroll-indicator {
-    position: absolute;
-    bottom: 2rem;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-    opacity: 0;
-    animation: fadeUp 0.8s ease 1.4s forwards;
-  }
-
-  .scroll-indicator span {
-    font-size: 0.55rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    opacity: 0.5;
-  }
-
-  .scroll-line {
-    width: 1px;
-    height: 32px;
-    background: var(--border);
-    position: relative;
-    overflow: hidden;
-  }
-
-  .scroll-line::after {
-    content: '';
-    position: absolute;
-    top: -100%;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--text);
-    animation: scrollPulse 2s ease infinite;
-  }
-
-  @keyframes scrollPulse {
-    0% { top: -100%; }
-    50% { top: 100%; }
-    100% { top: 100%; }
-  }
-
   /* ========== 3D MODEL ========== */
   .model-section {
     max-width: 800px;
@@ -363,7 +323,7 @@
     align-items: center;
     justify-content: center;
     gap: 1.5rem;
-    padding: 4rem 2rem;
+    padding: 2rem 2rem;
     max-width: 300px;
     margin: 0 auto;
   }
@@ -384,32 +344,11 @@
 
   /* ========== PULL QUOTE ========== */
   .pull-quote {
-    max-width: 640px;
+    max-width: 580px;
     margin: 0 auto;
-    padding: 1rem 3rem;
+    padding: 2rem 3rem;
     text-align: center;
     position: relative;
-  }
-
-  .pull-quote::before,
-  .pull-quote::after {
-    font-family: var(--serif);
-    font-size: 4rem;
-    color: var(--border);
-    position: absolute;
-    line-height: 1;
-  }
-
-  .pull-quote::before {
-    content: '\201C';
-    top: -0.8rem;
-    left: 0.5rem;
-  }
-
-  .pull-quote::after {
-    content: '\201D';
-    bottom: -1.5rem;
-    right: 0.5rem;
   }
 
   .pull-quote p {
@@ -425,7 +364,7 @@
   .elevation {
     max-width: 900px;
     margin: 0 auto;
-    padding: 5rem 2rem 4rem;
+    padding: 2.5rem 2rem 2.5rem;
     display: grid;
     grid-template-columns: 1fr 1.2fr;
     gap: 4rem;
@@ -463,40 +402,35 @@
     margin-top: 1.2rem;
   }
 
-  /* Vertical accent line */
   .elevation-right {
-    border-left: 1px solid var(--border);
-    padding-left: 3rem;
+    padding-left: 0;
   }
 
-  /* ========== FEATURES — HORIZONTAL MARQUEE FEEL ========== */
+  /* ========== FEATURES ========== */
   .features {
     max-width: 960px;
     margin: 0 auto;
-    padding: 3rem 2rem 4rem;
+    padding: 1rem 2rem 2.5rem;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1px;
-    background: var(--border);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    overflow: hidden;
+    gap: 2rem;
   }
 
   .feature {
-    padding: 3rem 2rem;
-    background: var(--bg);
+    padding: 2.5rem 1.8rem;
+    background: var(--bg-card);
+    border-radius: 12px;
     text-align: center;
     position: relative;
-    transition: background 0.4s ease;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
-  .feature:hover { background: var(--bg-card); }
+  .feature:hover { transform: translateY(-4px); }
 
   .feature-num {
-    font-family: var(--serif);
-    font-size: 3.2rem;
-    font-weight: 400;
+    font-family: var(--sans);
+    font-size: 2.8rem;
+    font-weight: 500;
     color: var(--text);
     margin-bottom: 0.3rem;
     line-height: 1;
@@ -521,16 +455,31 @@
     line-height: 1.7;
   }
 
+  /* ========== LIFESTYLE BREAK ========== */
+  .lifestyle-break {
+    max-width: 1100px;
+    margin: 1rem auto;
+    padding: 0 2rem;
+  }
+
+  .lifestyle-img {
+    width: 100%;
+    height: 420px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+  }
+
   /* ========== HOW IT WORKS ========== */
   .how-it-works {
     max-width: 720px;
     margin: 0 auto;
-    padding: 5rem 2rem;
+    padding: 2.5rem 2rem;
   }
 
   .how-header {
     text-align: center;
-    margin-bottom: 3.5rem;
+    margin-bottom: 2.5rem;
   }
 
   .section-label {
@@ -580,9 +529,9 @@
   }
 
   .step-num {
-    font-family: var(--serif);
-    font-size: 2.2rem;
-    font-weight: 400;
+    font-family: var(--sans);
+    font-size: 1.8rem;
+    font-weight: 300;
     color: var(--border);
     line-height: 1;
     padding-top: 0.1rem;
@@ -608,7 +557,7 @@
   .product-grid-section {
     max-width: 960px;
     margin: 0 auto;
-    padding: 4rem 2rem;
+    padding: 2.5rem 2rem;
   }
 
   .grid-header {
@@ -649,7 +598,7 @@
   .specs {
     max-width: 720px;
     margin: 0 auto;
-    padding: 3rem 2rem 4rem;
+    padding: 2.5rem 2rem 3rem;
   }
 
   .specs-header {
@@ -697,7 +646,7 @@
   .anchor-section {
     max-width: 700px;
     margin: 0 auto;
-    padding: 4rem 2rem;
+    padding: 2.5rem 2rem;
     text-align: center;
   }
 
@@ -721,7 +670,7 @@
   }
 
   .anchor-them .anchor-price {
-    font-family: var(--serif);
+    font-family: var(--price);
     font-size: 2.2rem;
     font-weight: 400;
     text-decoration: line-through;
@@ -753,7 +702,7 @@
   }
 
   .anchor-us .anchor-price {
-    font-family: var(--serif);
+    font-family: var(--price);
     font-size: 3.2rem;
     font-weight: 400;
     color: var(--text);
@@ -812,7 +761,7 @@
   .waitlist {
     background: var(--bg-dark);
     color: var(--text-light);
-    padding: 6rem 2rem;
+    padding: 5rem 2rem;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -851,7 +800,7 @@
   }
 
   .price-original {
-    font-family: var(--serif);
+    font-family: var(--price);
     font-size: 1.3rem;
     color: rgba(246, 244, 241, 0.25);
     text-decoration: line-through;
@@ -859,7 +808,7 @@
   }
 
   .price-founders {
-    font-family: var(--serif);
+    font-family: var(--price);
     font-size: 3rem;
     font-weight: 400;
     color: var(--text-light);
@@ -1056,21 +1005,15 @@
   /* ========== MOBILE ========== */
   @media (max-width: 700px) {
     nav { padding: 1rem 1.5rem; }
-    .hero { padding: 7rem 1.5rem 2rem; min-height: auto; }
+    .hero { padding: 8rem 1.5rem 2rem; min-height: auto; }
     .elevation {
       grid-template-columns: 1fr;
       gap: 2rem;
       padding: 3rem 1.5rem;
     }
-    .elevation-right {
-      border-left: none;
-      padding-left: 0;
-      border-top: 1px solid var(--border);
-      padding-top: 2rem;
-    }
     .features {
       grid-template-columns: 1fr;
-      border-radius: 12px;
+      gap: 1rem;
     }
     .product-grid {
       grid-template-columns: 1fr;
@@ -1088,10 +1031,7 @@
     .anchor-compare { flex-direction: column; gap: 0; }
     .anchor-vs { padding: 0.5rem 0; }
     .anchor-them, .anchor-us { padding: 1.8rem 2rem; }
-    .pull-quote { padding: 1rem 2.5rem; }
-    .pull-quote::before { left: 0; font-size: 3rem; }
-    .pull-quote::after { right: 0; font-size: 3rem; }
-    .scroll-indicator { display: none; }
+    .pull-quote { padding: 1.5rem 1.5rem; }
     .cursor-glow { display: none; }
     .marquee-strip { margin: 1rem 0; }
   }
@@ -1102,6 +1042,9 @@
   <!-- Subtle cursor glow -->
   <div class="cursor-glow" id="cursorGlow"></div>
 
+  <!-- EDITORIAL DATELINE -->
+  <div class="dateline" id="dateline">Aurean <span>|</span> Spring 2026</div>
+
   <!-- NAV -->
   <nav id="mainNav">
     <a href="#" class="nav-logo">Aurean</a>
@@ -1109,11 +1052,7 @@
   </nav>
 
   <!-- HERO -->
-  <div class="hero" style="position: relative;">
-    <div class="hero-proof">
-      <span class="hero-proof-dot"></span>
-      Designed for the 5.5M+ Oura Ring community
-    </div>
+  <div class="hero">
 
     <h1>
       <span class="line">The jewelry your Oura Ring</span>
@@ -1125,11 +1064,6 @@
     <div class="hero-cta-wrap">
       <a href="#waitlist" class="hero-cta">Join the Founders List</a>
       <span class="hero-cta-sub">Founders save $10 at launch</span>
-    </div>
-
-    <div class="scroll-indicator">
-      <span>Scroll</span>
-      <div class="scroll-line"></div>
     </div>
   </div>
 
@@ -1230,11 +1164,9 @@
     </div>
   </div>
 
-  <!-- DIVIDER -->
-  <div class="divider">
-    <div class="divider-line"></div>
-    <div class="divider-symbol">&amp;</div>
-    <div class="divider-line"></div>
+  <!-- LIFESTYLE BREAK -->
+  <div class="lifestyle-break reveal">
+    <div class="lifestyle-img" style="background-image: url('croissant.jpg');"></div>
   </div>
 
   <!-- HOW IT WORKS -->
@@ -1277,9 +1209,9 @@
       <p class="section-subtitle">Organic liquid-flow texture. Each piece catches light differently.</p>
     </div>
     <div class="product-grid">
-      <div class="product-img tall">Hero lifestyle shot</div>
-      <div class="product-img">Detail angle</div>
-      <div class="product-img">On hand close-up</div>
+      <div class="product-img tall" style="background: url('espresso.jpg') center/cover;"></div>
+      <div class="product-img" style="background: url('paris.jpg') center/cover;"></div>
+      <div class="product-img" style="background: url('steering.jpg') center/cover;"></div>
     </div>
   </div>
 
@@ -1400,10 +1332,13 @@
   </footer>
 
   <script>
-    // --- Nav scroll behavior ---
+    // --- Nav + dateline scroll behavior ---
     const nav = document.getElementById('mainNav');
+    const dateline = document.getElementById('dateline');
     window.addEventListener('scroll', () => {
-      nav.classList.toggle('scrolled', window.scrollY > 60);
+      const scrolled = window.scrollY > 60;
+      nav.classList.toggle('scrolled', scrolled);
+      dateline.classList.toggle('scrolled', scrolled);
     }, { passive: true });
 
     // --- Scroll reveal with stagger support ---
