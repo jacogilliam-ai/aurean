@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aurean — Luxury Smart Ring Cloaks</title>
+<title>Aurean — Luxury Smart Ring Cloaks for Oura Ring</title>
+<meta name="description" content="Transform your Oura Ring into sculpted sterling silver jewelry. Aurean Cloak slides on in 3 seconds. Join the founders list for 15% off.">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Karla:wght@300;400;500&display=swap" rel="stylesheet">
 <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
 <style>
@@ -15,6 +16,7 @@
     --text-light: #F6F4F1;
     --text-muted: #7A756F;
     --border: #D6D1CB;
+    --red: #C4553A;
     --serif: 'Playfair Display', Georgia, serif;
     --sans: 'Karla', sans-serif;
   }
@@ -36,21 +38,19 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem 3rem;
+    padding: 1.2rem 3rem;
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
+    top: 0; left: 0; right: 0;
     z-index: 100;
-    background: rgba(246, 244, 241, 0.9);
-    backdrop-filter: blur(10px);
+    background: rgba(246, 244, 241, 0.92);
+    backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border);
   }
 
   .nav-logo {
     font-family: var(--serif);
     font-size: 1.3rem;
-    font-weight: 400;
+    font-weight: 500;
     color: var(--text);
     text-decoration: none;
   }
@@ -66,51 +66,82 @@
     text-decoration: none;
     padding: 0.6rem 1.5rem;
     border-radius: 50px;
-    transition: opacity 0.3s ease;
+    transition: all 0.3s ease;
   }
 
-  .nav-cta:hover { opacity: 0.8; }
+  .nav-cta:hover { opacity: 0.85; }
 
-  /* ========== HERO ========== */
+  /* ========== HERO — Schwartz: Lead with problem, not solution ========== */
   .hero {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 7rem 2rem 2rem;
-    max-width: 800px;
+    padding: 7.5rem 2rem 1rem;
+    max-width: 780px;
     margin: 0 auto;
   }
 
-  .hero-badge {
-    font-size: 0.65rem;
+  /* Social proof badge — builds trust before they even read */
+  .hero-proof {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.7rem;
     font-weight: 500;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
+    letter-spacing: 0.1em;
     color: var(--text-muted);
-    margin-bottom: 1.5rem;
+    background: var(--bg-card);
+    padding: 0.5rem 1.2rem;
+    border-radius: 50px;
+    margin-bottom: 2rem;
     opacity: 0;
     animation: fadeUp 0.8s ease 0.1s forwards;
   }
 
+  .hero-proof-dot {
+    width: 6px;
+    height: 6px;
+    background: #4CAF50;
+    border-radius: 50%;
+    animation: pulse 2s ease infinite;
+  }
+
+  /* Problem-first headline — Schwartz awareness stage: problem-aware */
   .hero h1 {
     font-family: var(--serif);
-    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-size: clamp(2.4rem, 5.5vw, 4rem);
     font-weight: 400;
-    line-height: 1.15;
+    line-height: 1.2;
     margin-bottom: 1.5rem;
     opacity: 0;
     animation: fadeUp 0.8s ease 0.2s forwards;
   }
 
+  .hero h1 em {
+    font-style: italic;
+    color: var(--text-muted);
+  }
+
+  /* Halbert: conversational, specific, not ad-copy */
   .hero p {
     font-size: 1.05rem;
     color: var(--text-muted);
-    max-width: 480px;
+    max-width: 460px;
     line-height: 1.8;
     margin-bottom: 2rem;
     opacity: 0;
     animation: fadeUp 0.8s ease 0.35s forwards;
+  }
+
+  /* CTA with scarcity language */
+  .hero-cta-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.5s forwards;
   }
 
   .hero-cta {
@@ -126,8 +157,6 @@
     padding: 1rem 2.5rem;
     border-radius: 50px;
     transition: all 0.3s ease;
-    opacity: 0;
-    animation: fadeUp 0.8s ease 0.5s forwards;
   }
 
   .hero-cta:hover {
@@ -135,18 +164,23 @@
     box-shadow: 0 8px 30px rgba(26, 25, 24, 0.15);
   }
 
-  /* ========== 3D MODEL ========== */
+  .hero-cta-sub {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+  }
+
+  /* ========== 3D MODEL — Dopamine hit #1: visual wow ========== */
   .model-section {
     max-width: 700px;
-    margin: 0 auto;
-    padding: 0 2rem 2rem;
+    margin: 1rem auto 0;
+    padding: 0 2rem;
     opacity: 0;
     animation: fadeUp 0.8s ease 0.6s forwards;
   }
 
   model-viewer {
     width: 100%;
-    height: 450px;
+    height: 420px;
     background: transparent;
     --poster-color: transparent;
     outline: none;
@@ -159,46 +193,83 @@
 
   .model-caption {
     text-align: center;
-    font-size: 0.7rem;
+    font-size: 0.65rem;
     color: var(--text-muted);
-    margin-top: 0.5rem;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.08em;
   }
 
-  /* ========== FEATURES ========== */
+  /* ========== PROBLEM SECTION — Schwartz: agitate the wound ========== */
+  .problem {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 5rem 2rem 3rem;
+    text-align: center;
+  }
+
+  .problem-label {
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+  }
+
+  .problem h2 {
+    font-family: var(--serif);
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
+    font-weight: 400;
+    line-height: 1.35;
+    max-width: 550px;
+    margin: 0 auto 1.5rem;
+  }
+
+  .problem p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.8;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  /* ========== FEATURES — Halbert: specific, clear, no fluff ========== */
   .features {
     max-width: 900px;
     margin: 0 auto;
-    padding: 4rem 2rem;
+    padding: 3rem 2rem;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+    gap: 1.5rem;
     text-align: center;
   }
 
   .feature {
     padding: 2rem 1.5rem;
+    background: var(--bg-card);
+    border-radius: 12px;
   }
 
-  .feature-icon {
+  .feature-num {
     font-family: var(--serif);
-    font-size: 2rem;
-    font-style: italic;
-    color: var(--text);
-    margin-bottom: 1rem;
-  }
-
-  .feature h3 {
-    font-family: var(--serif);
-    font-size: 1.1rem;
+    font-size: 2.5rem;
     font-weight: 400;
-    margin-bottom: 0.75rem;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+    line-height: 1;
+  }
+
+  .feature-unit {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
   }
 
   .feature p {
     font-size: 0.85rem;
     color: var(--text-muted);
-    line-height: 1.7;
+    line-height: 1.6;
   }
 
   /* ========== HOW IT WORKS ========== */
@@ -244,16 +315,16 @@
     font-size: 1.8rem;
     font-weight: 400;
     color: var(--text);
-    min-width: 40px;
+    min-width: 36px;
     line-height: 1;
-    padding-top: 0.2rem;
+    padding-top: 0.15rem;
   }
 
   .step h4 {
     font-family: var(--serif);
     font-size: 1rem;
     font-weight: 500;
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.25rem;
   }
 
   .step p {
@@ -285,7 +356,7 @@
     justify-content: center;
     color: var(--text-muted);
     font-size: 0.75rem;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
     transition: transform 0.3s ease;
   }
@@ -301,100 +372,205 @@
   .specs {
     max-width: 700px;
     margin: 0 auto;
-    padding: 4rem 2rem;
+    padding: 3rem 2rem;
   }
 
   .specs-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
-    margin-top: 2.5rem;
+    margin-top: 2rem;
   }
 
   .spec {
-    padding: 1.5rem;
+    padding: 1.3rem;
     background: var(--bg-card);
     border-radius: 10px;
   }
 
   .spec-label {
-    font-size: 0.65rem;
+    font-size: 0.6rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--text-muted);
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.3rem;
   }
 
   .spec-value {
     font-family: var(--serif);
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     font-weight: 400;
   }
 
-  /* ========== WAITLIST ========== */
+  /* ========== COMPETITOR ANCHOR — Price anchoring psychology ========== */
+  .anchor-section {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+    text-align: center;
+  }
+
+  .anchor-section .section-title {
+    margin-bottom: 2rem;
+  }
+
+  .anchor-compare {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    align-items: flex-end;
+    margin-bottom: 2rem;
+  }
+
+  .anchor-them {
+    text-align: center;
+    opacity: 0.5;
+  }
+
+  .anchor-them .anchor-price {
+    font-family: var(--serif);
+    font-size: 2rem;
+    font-weight: 400;
+    text-decoration: line-through;
+    color: var(--text-muted);
+  }
+
+  .anchor-them .anchor-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-top: 0.3rem;
+  }
+
+  .anchor-vs {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    padding-bottom: 1.5rem;
+  }
+
+  .anchor-us {
+    text-align: center;
+  }
+
+  .anchor-us .anchor-price {
+    font-family: var(--serif);
+    font-size: 3rem;
+    font-weight: 400;
+    color: var(--text);
+  }
+
+  .anchor-us .anchor-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-top: 0.3rem;
+  }
+
+  .anchor-note {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-style: italic;
+    font-family: var(--serif);
+  }
+
+  /* ========== WAITLIST — Dopamine hit #2: price reveal + scarcity ========== */
   .waitlist {
     background: var(--bg-dark);
     color: var(--text-light);
     padding: 5rem 2rem;
-    margin-top: 4rem;
+    margin-top: 3rem;
     text-align: center;
   }
 
   .waitlist .section-title { color: var(--text-light); }
   .waitlist .section-subtitle { color: rgba(246, 244, 241, 0.6); }
 
+  /* Price display with anchor — crossed out original + discounted founders price */
+  .price-display {
+    margin: 1.5rem 0 0.5rem;
+  }
+
+  .price-original {
+    font-family: var(--serif);
+    font-size: 1.3rem;
+    color: rgba(246, 244, 241, 0.35);
+    text-decoration: line-through;
+    margin-right: 0.75rem;
+  }
+
+  .price-founders {
+    font-family: var(--serif);
+    font-size: 2.8rem;
+    font-weight: 400;
+    color: var(--text-light);
+  }
+
+  .price-savings {
+    display: inline-block;
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #8BC48A;
+    margin-top: 0.5rem;
+  }
+
   .waitlist-badge {
     display: inline-block;
     padding: 0.4rem 1.2rem;
-    border: 1px solid rgba(246, 244, 241, 0.25);
+    border: 1px solid rgba(246, 244, 241, 0.2);
     border-radius: 50px;
     color: var(--text-light);
     font-size: 0.65rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
   }
 
   .form-container {
-    max-width: 420px;
-    margin: 2.5rem auto 0;
+    max-width: 400px;
+    margin: 2rem auto 0;
     text-align: left;
   }
 
-  .form-group { margin-bottom: 1.2rem; }
+  .form-group { margin-bottom: 1rem; }
 
   .form-group label {
     display: block;
-    font-size: 0.7rem;
+    font-size: 0.65rem;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: rgba(246, 244, 241, 0.5);
-    margin-bottom: 0.4rem;
+    color: rgba(246, 244, 241, 0.45);
+    margin-bottom: 0.35rem;
   }
 
   .form-group input,
   .form-group select {
     width: 100%;
-    padding: 0.85rem 1rem;
-    background: rgba(246, 244, 241, 0.08);
-    border: 1px solid rgba(246, 244, 241, 0.15);
+    padding: 0.8rem 1rem;
+    background: rgba(246, 244, 241, 0.07);
+    border: 1px solid rgba(246, 244, 241, 0.12);
     border-radius: 8px;
     color: var(--text-light);
     font-family: var(--sans);
-    font-size: 0.9rem;
+    font-size: 0.88rem;
     outline: none;
     transition: border-color 0.3s ease;
   }
 
   .form-group input:focus,
-  .form-group select:focus { border-color: rgba(246, 244, 241, 0.4); }
+  .form-group select:focus { border-color: rgba(246, 244, 241, 0.35); }
 
-  .form-group input::placeholder { color: rgba(246, 244, 241, 0.3); }
+  .form-group input::placeholder { color: rgba(246, 244, 241, 0.25); }
 
   .form-group select {
     appearance: none;
     cursor: pointer;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='rgba(246,244,241,0.4)' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='rgba(246,244,241,0.35)' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: right 1rem center;
   }
@@ -418,7 +594,7 @@
     cursor: pointer;
     border-radius: 50px;
     transition: all 0.3s ease;
-    margin-top: 0.5rem;
+    margin-top: 0.3rem;
   }
 
   .submit-btn:hover {
@@ -428,39 +604,40 @@
 
   .form-note {
     text-align: center;
-    margin-top: 1.2rem;
-    font-size: 0.75rem;
-    color: rgba(246, 244, 241, 0.4);
+    margin-top: 1rem;
+    font-size: 0.7rem;
+    color: rgba(246, 244, 241, 0.35);
+    line-height: 1.6;
   }
 
   /* ========== FOOTER ========== */
   footer {
     background: var(--bg-dark);
     color: var(--text-light);
-    padding: 3rem 2rem;
+    padding: 2.5rem 2rem;
     text-align: center;
-    border-top: 1px solid rgba(246, 244, 241, 0.08);
+    border-top: 1px solid rgba(246, 244, 241, 0.06);
   }
 
   .footer-logo {
     font-family: var(--serif);
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 400;
-    margin-bottom: 1rem;
+    margin-bottom: 0.8rem;
   }
 
   .footer-links {
     display: flex;
     justify-content: center;
     gap: 2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
   }
 
   .footer-links a {
-    font-size: 0.7rem;
+    font-size: 0.65rem;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: rgba(246, 244, 241, 0.5);
+    color: rgba(246, 244, 241, 0.4);
     text-decoration: none;
     transition: color 0.3s ease;
   }
@@ -468,10 +645,10 @@
   .footer-links a:hover { color: var(--text-light); }
 
   .disclaimer {
-    font-size: 0.6rem;
-    color: rgba(246, 244, 241, 0.3);
+    font-size: 0.55rem;
+    color: rgba(246, 244, 241, 0.25);
     line-height: 1.6;
-    max-width: 500px;
+    max-width: 480px;
     margin: 0 auto;
   }
 
@@ -481,52 +658,71 @@
     to { opacity: 1; transform: translateY(0); }
   }
 
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
   /* ========== MOBILE ========== */
   @media (max-width: 700px) {
     nav { padding: 1rem 1.5rem; }
-    .hero { padding: 6rem 1.5rem 1rem; }
-    .features { grid-template-columns: 1fr; gap: 0; }
+    .hero { padding: 6.5rem 1.5rem 1rem; }
+    .features { grid-template-columns: 1fr; gap: 0.75rem; }
     .product-grid { grid-template-columns: 1fr; }
     .product-img.wide { aspect-ratio: 1; }
     .specs-grid { grid-template-columns: 1fr; }
-    .step { flex-direction: column; gap: 0.75rem; }
-    .footer-links { flex-direction: column; gap: 1rem; }
-    model-viewer { height: 350px; }
+    .step { flex-direction: column; gap: 0.5rem; }
+    .footer-links { flex-direction: column; gap: 0.75rem; }
+    model-viewer { height: 320px; }
+    .anchor-compare { flex-direction: column; align-items: center; gap: 1rem; }
+    .anchor-vs { padding-bottom: 0; }
   }
 </style>
 </head>
 <body>
 
-  <!-- NAV -->
+  <!-- NAV — Always visible CTA -->
   <nav>
     <a href="#" class="nav-logo">Aurean</a>
-    <a href="#waitlist" class="nav-cta">Join Waitlist</a>
+    <a href="#waitlist" class="nav-cta">Get 15% Off</a>
   </nav>
 
-  <!-- HERO -->
+  <!-- HERO
+    Psychology: Schwartz problem-aware hook + social proof badge + scarcity CTA
+    The headline leads with the PROBLEM (ugly Oura Ring) not the solution
+  -->
   <div class="hero">
-    <div class="hero-badge">Launching Soon</div>
-    <h1>Your Oura Ring, but make it jewelry.</h1>
-    <p>Aurean Cloak slides over your Oura Ring and transforms it into a sculpted silver statement piece. Same tech underneath. Beautiful jewelry on top.</p>
-    <a href="#waitlist" class="hero-cta">Join the Founders List</a>
+    <div class="hero-proof">
+      <span class="hero-proof-dot"></span>
+      Designed for the 5.5M+ Oura Ring community
+    </div>
+
+    <h1>You spent $300 on an Oura Ring. Why does it still look like <em>this?</em></h1>
+
+    <p>Aurean Cloak is a sterling silver jewelry piece that slides over your Oura Ring in 3 seconds. Your tech disappears. What's left is something people actually compliment.</p>
+
+    <div class="hero-cta-wrap">
+      <a href="#waitlist" class="hero-cta">Join the Founders List</a>
+      <span class="hero-cta-sub">15% off for early members</span>
+    </div>
   </div>
 
-  <!-- 3D MODEL -->
+  <!-- 3D MODEL — Dopamine hit #1: visual wow -->
   <div class="model-section">
     <model-viewer
       src="ring-model.glb"
-      alt="Aurean Cloak — sculpted silver smart ring cover"
+      alt="Aurean Cloak sterling silver smart ring cover"
       auto-rotate
       auto-rotate-delay="0"
       rotation-per-second="12deg"
       camera-controls
       disable-zoom
       interaction-prompt="none"
-      shadow-intensity="0.4"
-      shadow-softness="0.8"
+      shadow-intensity="0.3"
+      shadow-softness="0.9"
       exposure="1.1"
       environment-image="neutral"
-      camera-orbit="0deg 75deg 30m"
+      camera-orbit="0deg 75deg 45m"
       min-camera-orbit="auto auto auto"
       max-camera-orbit="auto auto auto"
       field-of-view="30deg"
@@ -535,49 +731,56 @@
     <p class="model-caption">Drag to rotate &middot; Design render &mdash; final product may vary slightly</p>
   </div>
 
-  <!-- FEATURES -->
+  <!-- PROBLEM AGITATION — Schwartz: twist the knife on the problem before offering the cure -->
+  <div class="problem">
+    <div class="problem-label">The problem</div>
+    <h2>The Oura Ring tracks everything about your health. But it looks like a $5 band from a vending machine.</h2>
+    <p>You wear it to dinner. To coffee. To meetings. Every day, on display. Yet nobody makes it look the way you actually dress. Until now.</p>
+  </div>
+
+  <!-- FEATURES — Halbert: specific numbers, not vague claims -->
   <div class="features">
     <div class="feature">
-      <div class="feature-icon">i</div>
-      <h3>Slides right on</h3>
-      <p>No tools, no adhesive. The cloak slides over your Oura Ring from the top and grips securely from below.</p>
+      <div class="feature-num">3</div>
+      <div class="feature-unit">Seconds</div>
+      <p>Slides over your Oura Ring from the top. No tools. No adhesive. On and off whenever you want.</p>
     </div>
     <div class="feature">
-      <div class="feature-icon">ii</div>
-      <h3>Sensors stay clear</h3>
-      <p>Open bottom design means your health tracking, sleep data, and charging all work perfectly.</p>
+      <div class="feature-num">0</div>
+      <div class="feature-unit">Sensors blocked</div>
+      <p>Open bottom design. Health tracking, sleep data, heart rate, SpO2, and charging all work perfectly.</p>
     </div>
     <div class="feature">
-      <div class="feature-icon">iii</div>
-      <h3>Actually looks good</h3>
-      <p>Hand-sculpted liquid silver texture. Looks like inherited jewelry, not a tech accessory.</p>
+      <div class="feature-num">925</div>
+      <div class="feature-unit">Sterling silver</div>
+      <p>Rhodium-plated sterling silver with hand-sculpted liquid texture. Real jewelry, not a plastic cover.</p>
     </div>
   </div>
 
   <!-- HOW IT WORKS -->
   <div class="how-it-works">
     <h2 class="section-title">How it works</h2>
-    <p class="section-subtitle">Three seconds to transform your ring.</p>
+    <p class="section-subtitle">Three steps. No instructions needed.</p>
     <div class="steps">
       <div class="step">
         <div class="step-num">1</div>
         <div>
           <h4>Slide</h4>
-          <p>Place the cloak over your Oura Ring from the top. It glides on smoothly.</p>
+          <p>Place the cloak over your Oura Ring from the top. The opening is designed to glide on smoothly without forcing.</p>
         </div>
       </div>
       <div class="step">
         <div class="step-num">2</div>
         <div>
           <h4>Grip</h4>
-          <p>The split-ring base flexes open and snaps securely around your ring. Stays put all day.</p>
+          <p>The split-ring base flexes open and snaps securely around your ring. Spring-memory metal keeps it locked all day.</p>
         </div>
       </div>
       <div class="step">
         <div class="step-num">3</div>
         <div>
-          <h4>Wear</h4>
-          <p>Your Oura Ring disappears. What's left is sculptural silver jewelry that people actually notice.</p>
+          <h4>Forget about it</h4>
+          <p>Your Oura Ring disappears underneath. What people see is sculpted sterling silver jewelry that looks like it was inherited, not ordered.</p>
         </div>
       </div>
     </div>
@@ -586,7 +789,7 @@
   <!-- PRODUCT GRID -->
   <div class="product-grid-section">
     <h2 class="section-title" style="text-align: center;">The Cloak</h2>
-    <p class="section-subtitle" style="text-align: center;">Organic liquid-flow texture in rhodium-plated silver.</p>
+    <p class="section-subtitle" style="text-align: center;">Organic liquid-flow texture. Each one catches light differently.</p>
     <div class="product-grid">
       <div class="product-img wide">Hero lifestyle shot</div>
       <div class="product-img">Detail angle</div>
@@ -600,36 +803,60 @@
     <div class="specs-grid">
       <div class="spec">
         <div class="spec-label">Material</div>
-        <div class="spec-value">Rhodium-plated silver</div>
+        <div class="spec-value">Sterling Silver 925</div>
       </div>
       <div class="spec">
         <div class="spec-label">Finish</div>
-        <div class="spec-value">Hand-sculpted liquid flow</div>
+        <div class="spec-value">Rhodium-plated, hand-sculpted</div>
       </div>
       <div class="spec">
         <div class="spec-label">Compatible with</div>
         <div class="spec-value">Oura Ring Gen 4</div>
       </div>
       <div class="spec">
-        <div class="spec-label">Price</div>
-        <div class="spec-value">$50 - $60</div>
+        <div class="spec-label">Weight added</div>
+        <div class="spec-value">Under 4 grams</div>
       </div>
       <div class="spec">
         <div class="spec-label">Sizes</div>
-        <div class="spec-value">8, 9, 10 (more coming)</div>
+        <div class="spec-value">8, 9, 10 (expanding)</div>
       </div>
       <div class="spec">
-        <div class="spec-label">Also available as</div>
-        <div class="spec-value">Standalone ring</div>
+        <div class="spec-label">Also available</div>
+        <div class="spec-value">As a standalone ring</div>
       </div>
     </div>
   </div>
 
-  <!-- WAITLIST -->
+  <!-- PRICE ANCHOR — Psychology: anchor against competitors to make your price feel like a steal -->
+  <div class="anchor-section">
+    <h2 class="section-title">Real jewelry. Not a luxury markup.</h2>
+    <div class="anchor-compare">
+      <div class="anchor-them">
+        <div class="anchor-price">$200+</div>
+        <div class="anchor-label">Other ring covers</div>
+      </div>
+      <div class="anchor-vs">vs</div>
+      <div class="anchor-us">
+        <div class="anchor-price">$68</div>
+        <div class="anchor-label">Aurean Cloak</div>
+      </div>
+    </div>
+    <p class="anchor-note">Same craftsmanship. Sterling silver. Without the designer tax.</p>
+  </div>
+
+  <!-- WAITLIST — Dopamine hit #2: founders price reveal + scarcity + urgency -->
   <div class="waitlist" id="waitlist">
-    <div class="waitlist-badge">Early Founders get 15% off</div>
+    <div class="waitlist-badge">Founders Pricing &mdash; Limited Availability</div>
     <h2 class="section-title">Get on the list.</h2>
-    <p class="section-subtitle">Be first to know when preorders open.</p>
+    <p class="section-subtitle">Early Founders lock in 15% off before we launch publicly.</p>
+
+    <!-- Price anchoring: show $68 crossed out, $58 founders price -->
+    <div class="price-display">
+      <span class="price-original">$68</span>
+      <span class="price-founders">$58</span>
+    </div>
+    <div class="price-savings">You save $10 as a founder</div>
 
     <div class="form-container">
       <div class="form-group">
@@ -658,8 +885,8 @@
         <label>Instagram (optional)</label>
         <input type="text" placeholder="@yourusername">
       </div>
-      <button class="submit-btn">Join the Founders List</button>
-      <p class="form-note">No payment required. Just first access.</p>
+      <button class="submit-btn">Lock In My Founders Price</button>
+      <p class="form-note">No payment now. Just first access + 15% off when we launch.<br>Founders window closes when preorders open.</p>
     </div>
   </div>
 
@@ -668,9 +895,14 @@
     <div class="footer-logo">Aurean</div>
     <div class="footer-links">
       <a href="https://instagram.com/aurean" target="_blank">Instagram</a>
-      <a href="/cdn-cgi/l/email-protection#b9d1dcd5d5d6f9d8cccbdcd8d797dad6">Contact</a>
+      <a href="mailto:hello@aurean.co">Contact</a>
     </div>
     <p class="disclaimer">
       Aurean is not affiliated with, endorsed by, or authorized by Oura Health Oy.
       "Oura" and "Oura Ring" are trademarks of Oura Health Oy, used here only to describe compatibility.
       <br>&copy; 2026 Aurean. All rights reserved.
+    </p>
+  </footer>
+
+</body>
+</html>
