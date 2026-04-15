@@ -116,7 +116,7 @@
   .feature p { font-size:0.85rem; color:var(--text-muted); line-height:1.7; }
 
   .lifestyle-break { max-width:1100px; margin:1rem auto; padding:0 2rem; }
-  .lifestyle-img { width:100%; height:420px; background-size:cover; background-position:center; border-radius:10px; }
+  .lifestyle-img { width:100%; height:420px; background-size:cover; background-position:center; border-radius:10px; background-color:var(--bg-card); }
 
   .how-it-works { max-width:720px; margin:0 auto; padding:2.5rem 2rem; }
   .how-header { text-align:center; margin-bottom:2.5rem; }
@@ -135,7 +135,7 @@
   .product-grid-section { max-width:960px; margin:0 auto; padding:2.5rem 2rem; }
   .grid-header { text-align:center; margin-bottom:2.5rem; }
   .product-grid { display:grid; grid-template-columns:1.3fr 0.7fr; grid-template-rows:1fr 1fr; gap:0.75rem; height:600px; }
-  .product-img { border-radius:10px; overflow:hidden; background-size:cover; background-position:center; transition:all 0.5s cubic-bezier(0.16,1,0.3,1); }
+  .product-img { border-radius:10px; overflow:hidden; background-size:cover; background-position:center; background-color:var(--bg-card); transition:all 0.5s cubic-bezier(0.16,1,0.3,1); }
   .product-img:hover { transform:scale(1.01); }
   .product-img.tall { grid-row:1/-1; }
 
@@ -153,7 +153,9 @@
   .anchor-section .section-title { margin-bottom:3rem; }
   .anchor-compare { display:flex; justify-content:center; align-items:center; gap:0; margin-bottom:2.5rem; }
   .anchor-them { text-align:center; padding:2.5rem 3rem; opacity:0.35; }
-  .anchor-them .anchor-price { font-family:var(--price); font-size:2.2rem; font-weight:400; text-decoration:line-through; color:var(--text-muted); }
+  .anchor-them .anchor-price { font-family:var(--price); font-size:2.2rem; font-weight:400; color:var(--text-muted); }
+  .anchor-them .anchor-price .struck { text-decoration:line-through; }
+  .anchor-them .anchor-price .range-sep { text-decoration:none; font-size:1.4rem; opacity:0.5; }
   .anchor-them .anchor-label { font-size:0.6rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--text-muted); margin-top:0.4rem; }
   .anchor-vs { font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--text-muted); padding:0 1rem; }
   .anchor-us { text-align:center; padding:2.5rem 3rem; background:var(--bg-card); border-radius:14px; }
@@ -412,7 +414,7 @@
   <div class="anchor-section reveal">
     <h2 class="section-title">Sterling silver craftsmanship.<br>Honest pricing.</h2>
     <div class="anchor-compare">
-      <div class="anchor-them"><div class="anchor-price">$250–350</div><div class="anchor-label">Other ring covers</div></div>
+      <div class="anchor-them"><div class="anchor-price"><span class="struck">$250</span><span class="range-sep"> – </span><span class="struck">$350</span></div><div class="anchor-label">Other ring covers</div></div>
       <div class="anchor-vs">vs</div>
       <div class="anchor-us"><div class="anchor-price">$148</div><div class="anchor-label">Aurean Cloak</div></div>
     </div>
