@@ -500,7 +500,7 @@
             <option value="12">Size 12</option>
             <option value="na">I don't have an Oura Ring</option>
           </select>
-          <p class="field-note">Sizes 8, 9, 10 available at launch. All other sizes coming in Drop 2 &mdash; your founders price is reserved regardless.</p>
+          <p class="field-note" id="size-note" style="display:none">Your size is coming in Drop 2 &mdash; your founders price is reserved and waiting for you.</p>
         </div>
         <div class="form-optional-divider"><span class="form-optional-label">Optional &mdash; help us get to know you</span></div>
 
@@ -515,6 +515,10 @@
             <option value="Friend">A friend</option>
             <option value="Other">Other</option>
           </select>
+        </div>
+        <div class="form-group" id="source-other-group" style="display:none">
+          <label for="field-source-other">Where specifically?</label>
+          <input type="text" id="field-source-other" name="how_found_other" placeholder="Tell us where">
         </div>
         <div class="form-group">
           <label for="field-style">Who are you shopping for?</label>
@@ -615,6 +619,22 @@
       entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
     }, { threshold: 0.12, rootMargin: '0px 0px -30px 0px' });
     document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => observer.observe(el));
+
+    // Size note — only show for sizes outside Drop 1 (8, 9, 10)
+    const sizeSelect = document.getElementById('field-size');
+    const sizeNote   = document.getElementById('size-note');
+    const drop1Sizes = ['8', '9', '10'];
+    sizeSelect.addEventListener('change', () => {
+      const v = sizeSelect.value;
+      sizeNote.style.display = (v && !drop1Sizes.includes(v)) ? 'block' : 'none';
+    });
+
+    // "Other" source reveal
+    const sourceSelect      = document.getElementById('field-source');
+    const sourceOtherGroup  = document.getElementById('source-other-group');
+    sourceSelect.addEventListener('change', () => {
+      sourceOtherGroup.style.display = sourceSelect.value === 'Other' ? 'block' : 'none';
+    });
 
     // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(a => {
