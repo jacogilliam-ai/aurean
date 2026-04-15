@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aurean — Sterling Silver Covers for Oura Ring</title>
+<meta name="description" content="Aurean Cloak transforms your Oura Ring into sculpted sterling silver jewelry. Slides on in 3 seconds. Join the founders list and save $10.">
+
+<!-- Open Graph / Social Share -->
+<meta property="og:title" content="Aurean — Sterling Silver Covers for Oura Ring">
+<meta property="og:description" content="Aurean Cloak slides over your Oura Ring and transforms it into sculpted sterling silver jewelry. Slides on in 3 seconds. Zero sensors blocked. Founders save $10.">
+<meta property="og:image" content="https://aurean.co/og-image.jpg">
+<meta property="og:url" content="https://aurean.co">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Aurean">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Aurean — Sterling Silver Covers for Oura Ring">
+<meta name="twitter:description" content="Aurean Cloak slides over your Oura Ring and transforms it into sculpted sterling silver jewelry. Founders save $10.">
+<meta name="twitter:image" content="https://aurean.co/og-image.jpg">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Karla:wght@300;400;500&family=Lora:wght@400;500&display=swap" rel="stylesheet">
+<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
+<style>
+  :root {
+    --bg: #F6F4F1;
+    --bg-card: #EDEAE6;
+    --bg-dark: #1A1918;
+    --text: #1A1918;
+    --text-light: #F6F4F1;
+    --text-muted: #7A756F;
+    --border: #D6D1CB;
+    --serif: 'Playfair Display', Georgia, serif;
+    --sans: 'Karla', sans-serif;
+    --price: 'Lora', Georgia, serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-weight: 400;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+  body::after {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 9999;
+  }
+  ::selection { background: rgba(26,25,24,0.12); color: var(--text); }
+  .reveal { opacity:0; transform:translateY(30px); transition: opacity 0.9s cubic-bezier(0.16,1,0.3,1), transform 0.9s cubic-bezier(0.16,1,0.3,1); }
+  .reveal.visible { opacity:1; transform:translateY(0); }
+  .reveal-stagger > * { opacity:0; transform:translateY(20px); transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1); }
+  .reveal-stagger.visible > *:nth-child(1) { transition-delay:0s; opacity:1; transform:translateY(0); }
+  .reveal-stagger.visible > *:nth-child(2) { transition-delay:0.08s; opacity:1; transform:translateY(0); }
+  .reveal-stagger.visible > *:nth-child(3) { transition-delay:0.16s; opacity:1; transform:translateY(0); }
+
+  .dateline { position:fixed; top:0; left:0; right:0; z-index:101; text-align:center; padding:0.45rem 2rem; font-size:0.58rem; font-weight:400; letter-spacing:0.2em; text-transform:uppercase; color:var(--text-muted); background:var(--bg); border-bottom:1px solid var(--border); transition:all 0.5s ease; opacity:0.7; }
+  .dateline.scrolled { background:rgba(246,244,241,0.92); backdrop-filter:blur(12px); }
+  .dateline span { margin:0 0.4rem; opacity:0.4; }
+
+  nav { display:flex; justify-content:space-between; align-items:center; padding:1.2rem 3rem; position:fixed; top:1.58rem; left:0; right:0; z-index:100; background:rgba(246,244,241,0); backdrop-filter:blur(0px); border-bottom:1px solid transparent; transition:all 0.5s ease; }
+  nav.scrolled { background:rgba(246,244,241,0.92); backdrop-filter:blur(12px); border-bottom-color:var(--border); }
+  .nav-logo { font-family:var(--serif); font-size:1.3rem; font-weight:500; color:var(--text); text-decoration:none; letter-spacing:0.02em; }
+  .nav-cta { font-family:var(--sans); font-size:0.68rem; font-weight:500; letter-spacing:0.15em; text-transform:uppercase; color:var(--text-light); background:var(--bg-dark); text-decoration:none; padding:0.6rem 1.5rem; border-radius:50px; transition:all 0.4s cubic-bezier(0.16,1,0.3,1); }
+  .nav-cta:hover { transform:translateY(-1px); opacity:0.9; }
+
+  .hero { display:flex; flex-direction:column; align-items:center; text-align:center; padding:11rem 2rem 2rem; max-width:820px; margin:0 auto; min-height:85vh; justify-content:center; }
+  .hero-badge { display:inline-block; font-size:0.62rem; font-weight:500; letter-spacing:0.2em; text-transform:uppercase; color:var(--text-muted); padding:0.45rem 1.2rem; border:1px solid var(--border); border-radius:50px; background:var(--bg-card); margin-bottom:2rem; opacity:0; animation:fadeUp 0.8s cubic-bezier(0.16,1,0.3,1) 0.15s forwards; }
+  .hero h1 { font-family:var(--serif); font-size:clamp(2.6rem,5.8vw,4.2rem); font-weight:400; line-height:1.18; margin-bottom:1.8rem; letter-spacing:-0.01em; }
+  .hero h1 .line { display:block; opacity:0; transform:translateY(20px); animation:fadeUp 0.9s cubic-bezier(0.16,1,0.3,1) forwards; }
+  .hero h1 .line:nth-child(1) { animation-delay:0.3s; }
+  .hero h1 .line:nth-child(2) { animation-delay:0.45s; }
+  .hero h1 em { font-style:italic; position:relative; }
+  .hero h1 em::after { content:''; position:absolute; bottom:2px; left:0; right:0; height:1px; background:var(--text); opacity:0.2; transform:scaleX(0); transform-origin:left; animation:lineReveal 0.8s ease 1.2s forwards; }
+  @keyframes lineReveal { to { transform:scaleX(1); } }
+  .hero p { font-size:1.05rem; color:var(--text-muted); max-width:440px; line-height:1.8; margin-bottom:2.5rem; opacity:0; animation:fadeUp 0.9s cubic-bezier(0.16,1,0.3,1) 0.6s forwards; }
+  .hero-cta-wrap { display:flex; flex-direction:column; align-items:center; gap:0.6rem; opacity:0; animation:fadeUp 0.9s cubic-bezier(0.16,1,0.3,1) 0.75s forwards; }
+  .hero-cta { display:inline-block; font-family:var(--sans); font-size:0.72rem; font-weight:500; letter-spacing:0.15em; text-transform:uppercase; color:var(--text-light); background:var(--bg-dark); text-decoration:none; padding:1.05rem 2.8rem; border-radius:50px; transition:all 0.4s cubic-bezier(0.16,1,0.3,1); }
+  .hero-cta:hover { transform:translateY(-2px); box-shadow:0 12px 40px rgba(26,25,24,0.12); }
+  .hero-cta-sub { font-size:0.68rem; color:var(--text-muted); letter-spacing:0.03em; }
+
+  .model-section { max-width:800px; margin:0 auto; padding:0 2rem 2rem; opacity:0; animation:fadeUp 0.8s ease 0.9s forwards; }
+  model-viewer { width:100%; height:520px; background:transparent; --poster-color:transparent; outline:none; }
+  model-viewer::part(default-progress-bar) { background-color:var(--bg-dark); height:1px; }
+  .model-caption { text-align:center; font-size:0.62rem; color:var(--text-muted); letter-spacing:0.1em; margin-top:0.75rem; text-transform:uppercase; }
+
+  .marquee-strip { padding:1.2rem 0; border-top:1px solid var(--border); border-bottom:1px solid var(--border); overflow:hidden; margin:1rem 0; }
+  .marquee-inner { display:flex; gap:3rem; animation:marqueeScroll 25s linear infinite; width:max-content; }
+  .marquee-item { font-family:var(--serif); font-size:0.8rem; font-style:italic; color:var(--text-muted); white-space:nowrap; opacity:0.5; }
+  .marquee-dot { color:var(--border); }
+  @keyframes marqueeScroll { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+
+  .divider { display:flex; align-items:center; justify-content:center; gap:1.5rem; padding:2rem; max-width:300px; margin:0 auto; }
+  .divider-line { flex:1; height:1px; background:var(--border); }
+  .divider-symbol { font-family:var(--serif); font-size:0.9rem; font-style:italic; color:var(--text-muted); opacity:0.4; }
+
+  .pull-quote { max-width:580px; margin:0 auto; padding:2rem 3rem; text-align:center; }
+  .pull-quote p { font-family:var(--serif); font-size:clamp(1.05rem,2.3vw,1.3rem); font-style:italic; font-weight:400; color:var(--text-muted); line-height:1.9; }
+
+  .elevation { max-width:900px; margin:0 auto; padding:2.5rem 2rem; display:grid; grid-template-columns:1fr 1.2fr; gap:4rem; align-items:center; }
+  .elevation-label { font-size:0.62rem; font-weight:500; letter-spacing:0.25em; text-transform:uppercase; color:var(--text-muted); margin-bottom:1.5rem; display:block; }
+  .elevation h2 { font-family:var(--serif); font-size:clamp(1.5rem,3.5vw,2.1rem); font-weight:400; line-height:1.35; }
+  .elevation-right p { font-size:0.95rem; color:var(--text-muted); line-height:2; }
+  .elevation-right p + p { margin-top:1.2rem; }
+
+  .features { max-width:960px; margin:0 auto; padding:1rem 2rem 2.5rem; display:grid; grid-template-columns:repeat(3,1fr); gap:2rem; }
+  .feature { padding:2.5rem 1.8rem; background:var(--bg-card); border-radius:12px; text-align:center; transition:transform 0.4s cubic-bezier(0.16,1,0.3,1); }
+  .feature:hover { transform:translateY(-4px); }
+  .feature-num { font-family:var(--sans); font-size:2.8rem; font-weight:500; color:var(--text); margin-bottom:0.3rem; line-height:1; }
+  .feature-unit { font-size:0.6rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--text-muted); margin-bottom:1.2rem; }
+  .feature p { font-size:0.85rem; color:var(--text-muted); line-height:1.7; }
+
+  .lifestyle-break { max-width:1100px; margin:1rem auto; padding:0 2rem; }
+  .lifestyle-img { width:100%; height:420px; background-size:cover; background-position:center; border-radius:10px; }
+
+  .how-it-works { max-width:720px; margin:0 auto; padding:2.5rem 2rem; }
+  .how-header { text-align:center; margin-bottom:2.5rem; }
+  .section-label { font-size:0.6rem; font-weight:500; letter-spacing:0.3em; text-transform:uppercase; color:var(--text-muted); margin-bottom:1rem; display:block; }
+  .section-title { font-family:var(--serif); font-size:clamp(1.8rem,4vw,2.5rem); font-weight:400; margin-bottom:0.6rem; }
+  .section-subtitle { font-size:0.9rem; color:var(--text-muted); line-height:1.7; }
+  .steps { display:flex; flex-direction:column; }
+  .step { display:grid; grid-template-columns:60px 1fr; gap:1.5rem; padding:2rem 0; border-bottom:1px solid var(--border); transition:all 0.3s ease; }
+  .step:first-child { border-top:1px solid var(--border); }
+  .step:hover { padding-left:0.5rem; }
+  .step-num { font-family:var(--sans); font-size:1.8rem; font-weight:300; color:var(--border); line-height:1; padding-top:0.1rem; transition:color 0.3s ease; }
+  .step:hover .step-num { color:var(--text); }
+  .step h4 { font-family:var(--serif); font-size:1.05rem; font-weight:500; margin-bottom:0.4rem; }
+  .step p { font-size:0.88rem; color:var(--text-muted); line-height:1.7; }
+
+  .product-grid-section { max-width:960px; margin:0 auto; padding:2.5rem 2rem; }
+  .grid-header { text-align:center; margin-bottom:2.5rem; }
+  .product-grid { display:grid; grid-template-columns:1.3fr 0.7fr; grid-template-rows:1fr 1fr; gap:0.75rem; height:600px; }
+  .product-img { border-radius:10px; overflow:hidden; background-size:cover; background-position:center; transition:all 0.5s cubic-bezier(0.16,1,0.3,1); }
+  .product-img:hover { transform:scale(1.01); }
+  .product-img.tall { grid-row:1/-1; }
+
+  .specs { max-width:720px; margin:0 auto; padding:2.5rem 2rem 3rem; }
+  .specs-header { text-align:center; margin-bottom:2rem; }
+  .specs-grid { display:grid; grid-template-columns:1fr 1fr; gap:0; border:1px solid var(--border); border-radius:12px; overflow:hidden; }
+  .spec { padding:1.4rem 1.5rem; background:var(--bg); border-bottom:1px solid var(--border); transition:background 0.3s ease; }
+  .spec:hover { background:var(--bg-card); }
+  .spec:nth-child(odd) { border-right:1px solid var(--border); }
+  .spec:nth-last-child(-n+2) { border-bottom:none; }
+  .spec-label { font-size:0.58rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--text-muted); margin-bottom:0.25rem; }
+  .spec-value { font-family:var(--serif); font-size:1.02rem; font-weight:400; }
+
+  .anchor-section { max-width:700px; margin:0 auto; padding:2.5rem 2rem; text-align:center; }
+  .anchor-section .section-title { margin-bottom:3rem; }
+  .anchor-compare { display:flex; justify-content:center; align-items:center; gap:0; margin-bottom:2.5rem; }
+  .anchor-them { text-align:center; padding:2.5rem 3rem; opacity:0.35; }
+  .anchor-them .anchor-price { font-family:var(--price); font-size:2.2rem; font-weight:400; text-decoration:line-through; color:var(--text-muted); }
+  .anchor-them .anchor-label { font-size:0.6rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--text-muted); margin-top:0.4rem; }
+  .anchor-vs { font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--text-muted); padding:0 1rem; }
+  .anchor-us { text-align:center; padding:2.5rem 3rem; background:var(--bg-card); border-radius:14px; }
+  .anchor-us .anchor-price { font-family:var(--price); font-size:3.2rem; font-weight:400; color:var(--text); }
+  .anchor-us .anchor-label { font-size:0.6rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--text-muted); margin-top:0.4rem; }
+  .anchor-note { font-size:0.88rem; color:var(--text-muted); font-style:italic; font-family:var(--serif); }
+
+  /* ========== WAITLIST SECTION ========== */
+  .waitlist { background:var(--bg-dark); color:var(--text-light); padding:5rem 2rem; text-align:center; position:relative; overflow:hidden; }
+  .waitlist::before { content:''; position:absolute; top:-100px; left:50%; transform:translateX(-50%); width:600px; height:400px; background:radial-gradient(ellipse,rgba(246,244,241,0.04) 0%,transparent 70%); pointer-events:none; }
+  .waitlist .section-title { color:var(--text-light); }
+  .waitlist .section-subtitle { color:rgba(246,244,241,0.5); }
+
+  .price-display { margin:1.8rem 0 0.5rem; }
+  .price-original { font-family:var(--price); font-size:1.3rem; color:rgba(246,244,241,0.25); text-decoration:line-through; margin-right:0.75rem; }
+  .price-founders { font-family:var(--price); font-size:3rem; font-weight:400; color:var(--text-light); }
+  .price-savings { display:inline-block; font-size:0.62rem; font-weight:500; letter-spacing:0.18em; text-transform:uppercase; color:#8BA88B; margin-top:0.5rem; }
+
+  .waitlist-badge { display:inline-block; padding:0.45rem 1.3rem; border:1px solid rgba(246,244,241,0.12); border-radius:50px; color:rgba(246,244,241,0.5); font-size:0.62rem; letter-spacing:0.22em; text-transform:uppercase; margin-bottom:1.8rem; }
+
+  /* Social proof counter */
+  .social-proof { display:none; align-items:center; justify-content:center; gap:0.6rem; margin-bottom:1.2rem; }
+  .social-proof.visible { display:flex; }
+  .proof-dot { width:7px; height:7px; background:#8BA88B; border-radius:50%; animation:pulse 2s ease-in-out infinite; flex-shrink:0; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.35} }
+  .proof-text { font-size:0.7rem; letter-spacing:0.1em; color:rgba(246,244,241,0.45); }
+
+  .form-container { max-width:380px; margin:2.5rem auto 0; text-align:left; position:relative; z-index:1; }
+  .form-group { margin-bottom:1.1rem; }
+  .form-group label { display:block; font-size:0.6rem; letter-spacing:0.18em; text-transform:uppercase; color:rgba(246,244,241,0.35); margin-bottom:0.4rem; }
+  .form-group input,
+  .form-group select { width:100%; padding:0.85rem 1.1rem; background:rgba(246,244,241,0.04); border:1px solid rgba(246,244,241,0.08); border-radius:8px; color:var(--text-light); font-family:var(--sans); font-size:0.88rem; outline:none; transition:border-color 0.3s ease, background 0.3s ease; }
+  .form-group input:focus,
+  .form-group select:focus { border-color:rgba(246,244,241,0.25); background:rgba(246,244,241,0.07); }
+  .form-group input::placeholder { color:rgba(246,244,241,0.18); }
+  .form-group input.error,
+  .form-group select.error { border-color:rgba(220,120,100,0.6); }
+  .form-group select { appearance:none; cursor:pointer; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='rgba(246,244,241,0.3)' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 1rem center; }
+  .form-group select option { background:var(--bg-dark); color:var(--text-light); }
+  .submit-btn { width:100%; padding:1.05rem; background:var(--text-light); border:none; color:var(--bg-dark); font-family:var(--sans); font-size:0.72rem; font-weight:500; letter-spacing:0.2em; text-transform:uppercase; cursor:pointer; border-radius:50px; transition:all 0.4s cubic-bezier(0.16,1,0.3,1); margin-top:0.5rem; position:relative; }
+  .submit-btn:hover:not(:disabled) { transform:translateY(-2px); box-shadow:0 8px 30px rgba(246,244,241,0.1); }
+  .submit-btn:disabled { opacity:0.6; cursor:not-allowed; }
+  .form-note { text-align:center; margin-top:1.2rem; font-size:0.68rem; color:rgba(246,244,241,0.25); line-height:1.7; }
+  .form-optional-divider { display:flex; align-items:center; gap:1rem; margin:1.6rem 0 1.4rem; }
+  .form-optional-divider::before,
+  .form-optional-divider::after { content:''; flex:1; height:1px; background:rgba(246,244,241,0.07); }
+  .form-optional-label { font-size:0.58rem; letter-spacing:0.2em; text-transform:uppercase; color:rgba(246,244,241,0.2); white-space:nowrap; }
+
+  /* Form success state */
+  .form-success { display:none; max-width:380px; margin:2.5rem auto 0; text-align:center; animation:fadeUp 0.7s cubic-bezier(0.16,1,0.3,1) forwards; }
+  .form-success.visible { display:block; }
+  .success-icon { font-family:var(--serif); font-size:2.5rem; font-style:italic; color:rgba(246,244,241,0.25); margin-bottom:1.2rem; }
+  .success-title { font-family:var(--serif); font-size:1.8rem; font-weight:400; color:var(--text-light); margin-bottom:0.8rem; }
+  .success-body { font-size:0.88rem; color:rgba(246,244,241,0.45); line-height:1.9; }
+
+  /* ========== FOOTER ========== */
+  footer { background:var(--bg-dark); color:var(--text-light); padding:3rem 2rem; text-align:center; border-top:1px solid rgba(246,244,241,0.05); }
+  .footer-logo { font-family:var(--serif); font-size:1.1rem; font-weight:400; margin-bottom:1rem; letter-spacing:0.02em; }
+  .footer-links { display:flex; justify-content:center; gap:2.5rem; margin-bottom:1.5rem; }
+  .footer-links a { font-size:0.62rem; letter-spacing:0.18em; text-transform:uppercase; color:rgba(246,244,241,0.3); text-decoration:none; transition:color 0.3s ease; }
+  .footer-links a:hover { color:rgba(246,244,241,0.8); }
+  .disclaimer { font-size:0.52rem; color:rgba(246,244,241,0.18); line-height:1.7; max-width:500px; margin:0 auto; }
+
+  /* ========== STICKY MOBILE CTA ========== */
+  .mobile-sticky-cta { display:none; }
+  @media (max-width:700px) {
+    .mobile-sticky-cta {
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      position:fixed;
+      bottom:0; left:0; right:0;
+      z-index:200;
+      background:rgba(26,25,24,0.97);
+      backdrop-filter:blur(12px);
+      padding:1rem 1.5rem calc(1rem + env(safe-area-inset-bottom));
+      border-top:1px solid rgba(246,244,241,0.08);
+      transform:translateY(100%);
+      transition:transform 0.5s cubic-bezier(0.16,1,0.3,1);
+    }
+    .mobile-sticky-cta.visible { transform:translateY(0); }
+    .mobile-sticky-cta.hidden { transform:translateY(100%); }
+    .sticky-cta-text { font-size:0.72rem; color:rgba(246,244,241,0.5); letter-spacing:0.04em; }
+    .sticky-cta-text strong { display:block; color:var(--text-light); font-weight:500; letter-spacing:0.01em; font-size:0.82rem; }
+    .sticky-cta-btn { font-family:var(--sans); font-size:0.65rem; font-weight:500; letter-spacing:0.15em; text-transform:uppercase; color:var(--bg-dark); background:var(--text-light); text-decoration:none; padding:0.7rem 1.4rem; border-radius:50px; white-space:nowrap; flex-shrink:0; transition:opacity 0.3s ease; }
+    .sticky-cta-btn:hover { opacity:0.9; }
+  }
+
+  /* ========== ANIMATIONS ========== */
+  @keyframes fadeUp { from{opacity:0;transform:translateY(18px)} to{opacity:1;transform:translateY(0)} }
+
+  /* ========== MOBILE ========== */
+  @media (max-width:700px) {
+    nav { padding:1rem 1.5rem; }
+    .hero { padding:8rem 1.5rem 2rem; min-height:auto; }
+    .elevation { grid-template-columns:1fr; gap:2rem; padding:2rem 1.5rem; }
+    .features { grid-template-columns:1fr; gap:1rem; }
+    .product-grid { grid-template-columns:1fr; height:auto; }
+    .product-img { min-height:250px; }
+    .product-img.tall { grid-row:auto; }
+    .specs-grid { grid-template-columns:1fr; }
+    .spec:nth-child(odd) { border-right:none; }
+    .spec { border-bottom:1px solid var(--border); }
+    .spec:last-child { border-bottom:none; }
+    .step { grid-template-columns:45px 1fr; gap:1rem; }
+    .footer-links { flex-direction:column; gap:0.8rem; }
+    model-viewer { height:380px; }
+    .anchor-compare { flex-direction:column; gap:0; }
+    .anchor-vs { padding:0.5rem 0; }
+    .anchor-them, .anchor-us { padding:1.8rem 2rem; }
+    .pull-quote { padding:1.5rem 1.5rem; }
+    .lifestyle-img { height:280px; }
+    .marquee-strip { margin:0.5rem 0; }
+    /* Bottom padding so sticky CTA doesn't overlap footer content */
+    footer { padding-bottom:calc(5rem + env(safe-area-inset-bottom)); }
+  }
+</style>
+</head>
+<body>
+
+  <div class="dateline" id="dateline">Aurean <span>|</span> Spring 2026</div>
+
+  <nav id="mainNav">
+    <a href="#" class="nav-logo">Aurean</a>
+    <a href="#waitlist" class="nav-cta">Join the Founders</a>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-badge">Designed for the 5.5M+ Oura Ring community</div>
+    <h1>
+      <span class="line">The jewelry your Oura Ring</span>
+      <span class="line">was <em>always meant to wear.</em></span>
+    </h1>
+    <p>Aurean Cloak is a collection of sterling silver covers that slide over your Oura Ring in 3 seconds. Your tech stays. The style transforms.</p>
+    <div class="hero-cta-wrap">
+      <a href="#waitlist" class="hero-cta">Join the Founders List</a>
+      <span class="hero-cta-sub">Founders save $10 at launch</span>
+    </div>
+  </div>
+
+  <!-- 3D MODEL -->
+  <div class="model-section">
+    <model-viewer src="./ring-model.glb" alt="Aurean Cloak sterling silver smart ring cover" auto-rotate auto-rotate-delay="0" rotation-per-second="10deg" camera-controls disable-zoom interaction-prompt="none" shadow-intensity="0.25" shadow-softness="1" exposure="1.1" environment-image="neutral" camera-orbit="0deg 72deg 60m" field-of-view="28deg" style="--poster-color:transparent;"></model-viewer>
+    <p class="model-caption">Drag to rotate &middot; Design render &mdash; final may vary</p>
+  </div>
+
+  <!-- MARQUEE -->
+  <div class="marquee-strip">
+    <div class="marquee-inner">
+      <span class="marquee-item">Sterling Silver 925</span><span class="marquee-dot">&middot;</span>
+      <span class="marquee-item">Rhodium-Plated</span><span class="marquee-dot">&middot;</span>
+      <span class="marquee-item">Hand-Sculpted Texture</span><span class="marquee-dot">&middot;</span>
+      <span class="marquee-item">Slides On in Seconds</span><span class="marquee-dot">&middot;</span>
+      <span class="marquee-item">Zero Sensors Blocked</span><span class="marquee-dot">&middot;</span>
+      <span class="marquee-item">Designed for Oura Ring 4</span><span class="marquee-dot">&middot;</span>
+      <span class="marquee-item">Sterling Silver 925</span><span class="marquee-dot">&middot;</span>
+      <span class="marquee-item">Rhodium-Plated</span><span class="marquee-dot">&middot;</span>
+      <span class="marquee-item">Hand-Sculpted Texture</span><span class="marquee-dot">&middot;</span>
+      <span class="marquee-item">Slides On in Seconds</span><span class="marquee-dot">&middot;</span>
+      <span class="marquee-item">Zero Sensors Blocked</span><span class="marquee-dot">&middot;</span>
+      <span class="marquee-item">Designed for Oura Ring 4</span><span class="marquee-dot">&middot;</span>
+    </div>
+  </div>
+
+  <!-- PULL QUOTE -->
+  <div class="pull-quote reveal">
+    <p>It's the ring you notice when someone reaches for their espresso on a cobblestone side street. Not loud. Not trying. It just belongs.</p>
+  </div>
+
+  <div class="divider"><div class="divider-line"></div><div class="divider-symbol">&middot;</div><div class="divider-line"></div></div>
+
+  <!-- ELEVATION -->
+  <div class="elevation reveal">
+    <div class="elevation-left">
+      <span class="elevation-label">The idea</span>
+      <h2>Your Oura Ring already knows everything about your body. Now it can match the way you dress.</h2>
+    </div>
+    <div class="elevation-right">
+      <p>You wear it everywhere &mdash; to coffee, to dinner, on every trip. Aurean Cloak gives it the presence it deserves.</p>
+      <p>Sculpted sterling silver that looks like it was inherited, not ordered.</p>
+    </div>
+  </div>
+
+  <!-- FEATURES -->
+  <div class="features reveal-stagger">
+    <div class="feature">
+      <div class="feature-num">3</div>
+      <div class="feature-unit">Seconds</div>
+      <p>Slides over your Oura Ring from the top. No tools. No adhesive. On and off whenever you want.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-num">0</div>
+      <div class="feature-unit">Sensors blocked</div>
+      <p>Open bottom design. Health tracking, sleep data, heart rate, SpO2, and charging all work perfectly.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-num">925</div>
+      <div class="feature-unit">Sterling silver</div>
+      <p>Rhodium-plated sterling silver with a hand-sculpted liquid texture. Real jewelry, crafted to last.</p>
+    </div>
+  </div>
+
+  <!-- LIFESTYLE -->
+  <div class="lifestyle-break reveal">
+    <div class="lifestyle-img" style="background-image:url('./croissant.jpg');"></div>
+  </div>
+
+  <!-- HOW IT WORKS -->
+  <div class="how-it-works reveal">
+    <div class="how-header">
+      <span class="section-label">Mechanism</span>
+      <h2 class="section-title">How it works</h2>
+      <p class="section-subtitle">Three steps. No instructions needed.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><div><h4>Slide</h4><p>Place the Cloak over your Oura Ring from the top. The opening is designed to glide on smoothly without forcing.</p></div></div>
+      <div class="step"><div class="step-num">2</div><div><h4>Grip</h4><p>The split-ring base flexes open and snaps securely around your ring. Spring-memory metal keeps it locked all day.</p></div></div>
+      <div class="step"><div class="step-num">3</div><div><h4>Forget about it</h4><p>Your Oura Ring stays working underneath. What people see is sculpted sterling silver that looks like it's always been yours.</p></div></div>
+    </div>
+  </div>
+
+  <!-- PRODUCT GRID -->
+  <div class="product-grid-section reveal">
+    <div class="grid-header">
+      <span class="section-label">Preview</span>
+      <h2 class="section-title">The Collection</h2>
+      <p class="section-subtitle">Organic liquid-flow texture. Each piece catches light differently.</p>
+    </div>
+    <div class="product-grid">
+      <div class="product-img tall" style="background-image:url('./espresso.jpg');"></div>
+      <div class="product-img" style="background-image:url('./paris.jpg');"></div>
+      <div class="product-img" style="background-image:url('./steering.jpg');"></div>
+    </div>
+  </div>
+
+  <!-- SPECS -->
+  <div class="specs reveal">
+    <div class="specs-header">
+      <span class="section-label">Specifications</span>
+      <h2 class="section-title">Details</h2>
+    </div>
+    <div class="specs-grid">
+      <div class="spec"><div class="spec-label">Material</div><div class="spec-value">Sterling Silver 925</div></div>
+      <div class="spec"><div class="spec-label">Finish</div><div class="spec-value">Rhodium-plated, hand-sculpted</div></div>
+      <div class="spec"><div class="spec-label">Compatible with</div><div class="spec-value">Oura Ring Gen 4</div></div>
+      <div class="spec"><div class="spec-label">Weight added</div><div class="spec-value">Under 4 grams</div></div>
+      <div class="spec"><div class="spec-label">Sizes</div><div class="spec-value">8, 9, 10 (expanding)</div></div>
+      <div class="spec"><div class="spec-label">Also available</div><div class="spec-value">As a standalone ring</div></div>
+    </div>
+  </div>
+
+  <div class="divider"><div class="divider-line"></div><div class="divider-symbol">&middot;</div><div class="divider-line"></div></div>
+
+  <!-- PRICE ANCHOR -->
+  <div class="anchor-section reveal">
+    <h2 class="section-title">Sterling silver craftsmanship.<br>Honest pricing.</h2>
+    <div class="anchor-compare">
+      <div class="anchor-them"><div class="anchor-price">$200+</div><div class="anchor-label">Other ring covers</div></div>
+      <div class="anchor-vs">vs</div>
+      <div class="anchor-us"><div class="anchor-price">$68</div><div class="anchor-label">Aurean Cloak</div></div>
+    </div>
+    <p class="anchor-note">Same quality materials. Without the designer markup.</p>
+  </div>
+
+  <!-- WAITLIST -->
+  <div class="waitlist" id="waitlist">
+    <div class="waitlist-badge">Founders Pricing &mdash; Limited Availability</div>
+    <h2 class="section-title">Join the Founders.</h2>
+    <p class="section-subtitle">Be first to order when we launch. Founders lock in $10 off.</p>
+
+    <!-- Social proof counter — shown only when WAITLIST_COUNT >= SHOW_COUNTER_AT -->
+    <div class="social-proof" id="socialProof">
+      <div class="proof-dot"></div>
+      <span class="proof-text" id="proofText"></span>
+    </div>
+
+    <div class="price-display">
+      <span class="price-original">$68</span>
+      <span class="price-founders">$58</span>
+    </div>
+    <div class="price-savings">Founders save $10</div>
+
+    <!-- FORM -->
+    <!--
+      SETUP INSTRUCTIONS:
+      1. Go to formspree.io, create a free account, create a new form.
+      2. Copy your form endpoint (looks like https://formspree.io/f/xabc1234).
+      3. Replace YOUR_FORMSPREE_ID below with that ID (e.g. "xabc1234").
+
+      AIRTABLE SYNC:
+      Connect Formspree → Airtable via Zapier (free tier):
+        Trigger: Formspree — New Submission
+        Action: Airtable — Create Record
+      Map fields: name, email, ring_size, instagram → your Airtable columns.
+    -->
+    <div class="form-container" id="formContainer">
+      <form id="waitlistForm">
+        <input type="hidden" name="_subject" value="New Aurean Founders Signup">
+        <div class="form-group">
+          <label for="field-name">Name</label>
+          <input type="text" id="field-name" name="name" placeholder="Your name" autocomplete="name">
+        </div>
+        <div class="form-group">
+          <label for="field-email">Email</label>
+          <input type="email" id="field-email" name="email" placeholder="Your email" autocomplete="email">
+        </div>
+        <div class="form-group">
+          <label for="field-size">Oura Ring Size</label>
+          <select id="field-size" name="ring_size">
+            <option value="" disabled selected>Select your size</option>
+            <option value="6">Size 6</option>
+            <option value="7">Size 7</option>
+            <option value="8">Size 8</option>
+            <option value="9">Size 9</option>
+            <option value="10">Size 10</option>
+            <option value="11">Size 11</option>
+            <option value="12">Size 12</option>
+            <option value="na">I don't have an Oura Ring</option>
+          </select>
+        </div>
+        <div class="form-optional-divider"><span class="form-optional-label">Optional &mdash; help us get to know you</span></div>
+
+        <div class="form-group">
+          <label for="field-source">How did you hear about us?</label>
+          <select id="field-source" name="how_found">
+            <option value="" selected>Select one</option>
+            <option value="Reddit">Reddit</option>
+            <option value="Instagram">Instagram</option>
+            <option value="TikTok">TikTok</option>
+            <option value="Google">Google</option>
+            <option value="Friend">A friend</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="field-style">Who are you shopping for?</label>
+          <select id="field-style" name="style">
+            <option value="" selected>Select one</option>
+            <option value="Men's">Myself — men's style</option>
+            <option value="Women's">Myself — women's style</option>
+            <option value="Gift">A gift</option>
+            <option value="Either">Open to either</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="field-standalone">Interested in a standalone ring too?</label>
+          <select id="field-standalone" name="standalone_interest">
+            <option value="" selected>Select one</option>
+            <option value="Yes">Yes — I'd buy just the ring</option>
+            <option value="Maybe">Maybe, depends on the design</option>
+            <option value="No">No, just the Cloak for now</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="field-instagram">Instagram</label>
+          <input type="text" id="field-instagram" name="instagram" placeholder="@yourusername">
+        </div>
+
+        <button type="submit" class="submit-btn" id="submitBtn">Lock In My Founders Price</button>
+        <p class="form-note">No payment now. Just first access and $10 off when we launch.<br>Founders window closes when preorders open.</p>
+      </form>
+    </div>
+
+    <!-- Success state (shown after successful submission) -->
+    <div class="form-success" id="formSuccess">
+      <div class="success-icon">&#10003;</div>
+      <div class="success-title">You're on the list.</div>
+      <p class="success-body">We'll email you when the founders window opens.<br>Watch for a message from <span style="color:rgba(246,244,241,0.65)">hello@aurean.co</span>.</p>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">Aurean</div>
+    <div class="footer-links">
+      <a href="https://instagram.com/aurean" target="_blank">Instagram</a>
+      <a href="mailto:hello@aurean.co">Contact</a>
+    </div>
+    <p class="disclaimer">Aurean is not affiliated with, endorsed by, or authorized by Oura Health Oy. "Oura" and "Oura Ring" are trademarks of Oura Health Oy, used here only to describe compatibility.<br>&copy; 2026 Aurean. All rights reserved.</p>
+  </footer>
+
+  <!-- STICKY MOBILE CTA -->
+  <div class="mobile-sticky-cta" id="stickyCta">
+    <div class="sticky-cta-text">
+      <strong>Join the Founders List</strong>
+      Save $10 at launch
+    </div>
+    <a href="#waitlist" class="sticky-cta-btn">Save $10</a>
+  </div>
+
+  <script>
+    // ─── CONFIG ─────────────────────────────────────────────────────────────
+    // Update WAITLIST_COUNT weekly by checking your Formspree / Airtable.
+    // The badge only appears once count reaches SHOW_COUNTER_AT.
+    const WAITLIST_COUNT   = 0;   // e.g. 127 — current number on your list
+    const SHOW_COUNTER_AT  = 50;  // minimum before the badge shows
+    const FORMSPREE_ID     = 'myklzvzd';
+    // ────────────────────────────────────────────────────────────────────────
+
+    // Social proof counter
+    const proofEl   = document.getElementById('socialProof');
+    const proofText = document.getElementById('proofText');
+    if (WAITLIST_COUNT >= SHOW_COUNTER_AT) {
+      proofText.textContent = 'Join ' + WAITLIST_COUNT.toLocaleString() + ' others on the founders list';
+      proofEl.classList.add('visible');
+    }
+
+    // Scroll state: nav + dateline
+    const nav      = document.getElementById('mainNav');
+    const dateline = document.getElementById('dateline');
+    window.addEventListener('scroll', () => {
+      const s = window.scrollY > 60;
+      nav.classList.toggle('scrolled', s);
+      dateline.classList.toggle('scrolled', s);
+    }, { passive: true });
+
+    // Scroll reveal
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.12, rootMargin: '0px 0px -30px 0px' });
+    document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => observer.observe(el));
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', function(e) {
+        e.preventDefault();
+        const t = document.querySelector(this.getAttribute('href'));
+        if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+
+    // Sticky mobile CTA — shows after 0.5s, hides when waitlist is visible
+    const stickyCta    = document.getElementById('stickyCta');
+    const waitlistEl   = document.getElementById('waitlist');
+    let stickyVisible  = false;
+
+    setTimeout(() => {
+      stickyCta.classList.add('visible');
+      stickyVisible = true;
+    }, 500);
+
+    const waitlistObserver = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          stickyCta.classList.add('hidden');
+        } else if (stickyVisible) {
+          stickyCta.classList.remove('hidden');
+        }
+      });
+    }, { threshold: 0.15 });
+    waitlistObserver.observe(waitlistEl);
+
+    // Form submission via Formspree (AJAX — no page redirect)
+    const form       = document.getElementById('waitlistForm');
+    const submitBtn  = document.getElementById('submitBtn');
+    const successEl  = document.getElementById('formSuccess');
+    const formWrap   = document.getElementById('formContainer');
+
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+
+      // Basic validation
+      const nameField  = document.getElementById('field-name');
+      const emailField = document.getElementById('field-email');
+      const sizeField  = document.getElementById('field-size');
+      let valid = true;
+
+      [nameField, emailField, sizeField].forEach(f => f.classList.remove('error'));
+
+      if (!nameField.value.trim()) { nameField.classList.add('error'); valid = false; }
+      if (!emailField.value.trim() || !emailField.value.includes('@')) { emailField.classList.add('error'); valid = false; }
+      if (!sizeField.value) { sizeField.classList.add('error'); valid = false; }
+      if (!valid) return;
+
+      // Submit
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Saving your spot…';
+
+      try {
+        const res = await fetch('https://formspree.io/f/' + FORMSPREE_ID, {
+          method: 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: new FormData(form)
+        });
+
+        if (res.ok) {
+          // Hide form, show success
+          formWrap.style.display = 'none';
+          successEl.classList.add('visible');
+          // Also hide the sticky CTA once they've signed up
+          stickyCta.classList.add('hidden');
+          stickyVisible = false;
+        } else {
+          // Formspree returned an error
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Lock In My Founders Price';
+          alert('Something went wrong. Please try again or email hello@aurean.co.');
+        }
+      } catch (err) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Lock In My Founders Price';
+        alert('Something went wrong. Please check your connection and try again.');
+      }
+    });
+  </script>
+</body>
+</html>
