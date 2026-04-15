@@ -501,6 +501,7 @@
             <option value="na">I don't have an Oura Ring</option>
           </select>
           <p class="field-note" id="size-note" style="display:none">Your size is coming in Drop 2 &mdash; your founders price is reserved and waiting for you.</p>
+          <p class="field-note" id="no-oura-note" style="display:none">The standalone Aurean Ring is coming &mdash; same sculpted silver, no Oura needed. Sign up and your founders price is locked in.</p>
         </div>
         <div class="form-optional-divider"><span class="form-optional-label">Optional &mdash; help us get to know you</span></div>
 
@@ -624,13 +625,15 @@
     }, { threshold: 0.12, rootMargin: '0px 0px -30px 0px' });
     document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => observer.observe(el));
 
-    // Size note — only show for sizes outside Drop 1 (8, 9, 10)
-    const sizeSelect = document.getElementById('field-size');
-    const sizeNote   = document.getElementById('size-note');
-    const drop1Sizes = ['8', '9', '10'];
+    // Size note — conditional messaging based on selection
+    const sizeSelect   = document.getElementById('field-size');
+    const sizeNote     = document.getElementById('size-note');
+    const noOuraNote   = document.getElementById('no-oura-note');
+    const drop1Sizes   = ['8', '9', '10'];
     sizeSelect.addEventListener('change', () => {
       const v = sizeSelect.value;
-      sizeNote.style.display = (v && !drop1Sizes.includes(v)) ? 'block' : 'none';
+      sizeNote.style.display   = (v && v !== 'na' && !drop1Sizes.includes(v)) ? 'block' : 'none';
+      noOuraNote.style.display = (v === 'na') ? 'block' : 'none';
     });
 
     // "Other" source reveal
