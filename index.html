@@ -210,6 +210,7 @@
   .submit-btn:hover:not(:disabled) { transform:translateY(-2px); box-shadow:0 8px 30px rgba(246,244,241,0.1); }
   .submit-btn:disabled { opacity:0.6; cursor:not-allowed; }
   .form-note { text-align:center; margin-top:1.2rem; font-size:0.68rem; color:rgba(246,244,241,0.25); line-height:1.7; }
+  .field-note { font-size:0.62rem; color:rgba(246,244,241,0.25); margin-top:0.4rem; line-height:1.6; }
   .form-optional-divider { display:flex; align-items:center; gap:1rem; margin:1.6rem 0 1.4rem; }
   .form-optional-divider::before,
   .form-optional-divider::after { content:''; flex:1; height:1px; background:rgba(246,244,241,0.07); }
@@ -499,6 +500,7 @@
             <option value="12">Size 12</option>
             <option value="na">I don't have an Oura Ring</option>
           </select>
+          <p class="field-note">Sizes 6, 7, 8 available at launch &mdash; sizes 9+ coming in Drop 2.</p>
         </div>
         <div class="form-optional-divider"><span class="form-optional-label">Optional &mdash; help us get to know you</span></div>
 
@@ -534,8 +536,20 @@
           </select>
         </div>
         <div class="form-group">
-          <label for="field-instagram">Instagram</label>
-          <input type="text" id="field-instagram" name="instagram" placeholder="@yourusername">
+          <label for="field-platform">Your main platform</label>
+          <select id="field-platform" name="platform">
+            <option value="" selected>Select one</option>
+            <option value="Instagram">Instagram</option>
+            <option value="TikTok">TikTok</option>
+            <option value="YouTube">YouTube</option>
+            <option value="Pinterest">Pinterest</option>
+            <option value="Reddit">Reddit</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="field-handle">Your handle</label>
+          <input type="text" id="field-handle" name="social_handle" placeholder="@yourusername">
         </div>
 
         <button type="submit" class="submit-btn" id="submitBtn">Lock In My Founders Price</button>
