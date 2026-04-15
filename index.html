@@ -551,6 +551,10 @@
             <option value="Other">Other</option>
           </select>
         </div>
+        <div class="form-group" id="platform-other-group" style="display:none">
+          <label for="field-platform-other">Which platform?</label>
+          <input type="text" id="field-platform-other" name="platform_other" placeholder="e.g. Threads, X, Substack">
+        </div>
         <div class="form-group">
           <label for="field-handle">Your handle</label>
           <input type="text" id="field-handle" name="social_handle" placeholder="@yourusername">
@@ -634,6 +638,13 @@
     const sourceOtherGroup  = document.getElementById('source-other-group');
     sourceSelect.addEventListener('change', () => {
       sourceOtherGroup.style.display = sourceSelect.value === 'Other' ? 'block' : 'none';
+    });
+
+    // "Other" platform reveal
+    const platformSelect      = document.getElementById('field-platform');
+    const platformOtherGroup  = document.getElementById('platform-other-group');
+    platformSelect.addEventListener('change', () => {
+      platformOtherGroup.style.display = platformSelect.value === 'Other' ? 'block' : 'none';
     });
 
     // Smooth scroll for anchor links
