@@ -224,6 +224,107 @@
   .success-title { font-family:var(--serif); font-size:1.8rem; font-weight:400; color:var(--text-light); margin-bottom:0.8rem; }
   .success-body { font-size:0.88rem; color:rgba(246,244,241,0.45); line-height:1.9; }
 
+  /* ========== CURSOR ========== */
+  @media (pointer:fine) {
+    body, * { cursor: none !important; }
+    .cursor-dot {
+      position:fixed; width:6px; height:6px;
+      background:#fff; border-radius:50%;
+      pointer-events:none; z-index:9998;
+      transform:translate(-50%,-50%);
+      mix-blend-mode:exclusion;
+      will-change:left,top;
+    }
+    .cursor-ring {
+      position:fixed; width:36px; height:36px;
+      border:1px solid rgba(255,255,255,0.65); border-radius:50%;
+      pointer-events:none; z-index:9997;
+      transform:translate(-50%,-50%);
+      mix-blend-mode:exclusion;
+      transition:width 0.35s cubic-bezier(0.16,1,0.3,1), height 0.35s cubic-bezier(0.16,1,0.3,1), opacity 0.3s;
+      will-change:left,top;
+    }
+    .cursor-ring.expand { width:54px; height:54px; }
+  }
+  @media (pointer:coarse) {
+    .cursor-dot, .cursor-ring { display:none; }
+  }
+
+  /* ========== PAGE CURTAIN ========== */
+  #pageCurtain {
+    position:fixed; inset:0;
+    background:var(--bg); z-index:10001;
+    pointer-events:none;
+    transition:opacity 0.9s cubic-bezier(0.76,0,0.24,1) 0.05s;
+  }
+  #pageCurtain.gone { opacity:0; }
+
+  /* ========== FEATURES EDITORIAL ========== */
+  .features-editorial {
+    max-width:960px; margin:0 auto;
+    padding:0 2rem 4rem;
+    display:grid;
+    grid-template-columns:1fr 1px 1fr 1px 1fr;
+    align-items:start;
+  }
+  .feat-divider { background:var(--border); align-self:stretch; margin:0 2.5rem; }
+  .feat-item { padding:2rem 0.5rem; }
+  .feat-num {
+    font-family:var(--price);
+    font-size:4.5rem; font-weight:400;
+    color:var(--text); line-height:1;
+    margin-bottom:0.2rem;
+  }
+  .feat-unit {
+    font-size:0.58rem; letter-spacing:0.28em;
+    text-transform:uppercase; color:var(--text-muted);
+    padding-bottom:1rem; margin-bottom:1rem;
+    border-bottom:1px solid var(--border);
+  }
+  .feat-item p { font-size:0.85rem; color:var(--text-muted); line-height:1.85; }
+
+  /* ========== COMMUNITY EDITORIAL ========== */
+  .community-editorial { background:var(--bg-dark); padding:5rem 2rem; margin:2rem 0; }
+  .community-inner { max-width:900px; margin:0 auto; display:grid; grid-template-columns:repeat(3,1fr); }
+  .community-fig { text-align:center; padding:1rem 2rem; border-right:1px solid rgba(246,244,241,0.07); }
+  .community-fig:last-child { border-right:none; }
+  .community-num {
+    font-family:var(--price);
+    font-size:clamp(2.5rem,5vw,3.5rem);
+    font-weight:400; color:var(--text-light);
+    line-height:1; margin-bottom:1rem;
+  }
+  .community-label {
+    font-size:0.6rem; letter-spacing:0.2em;
+    text-transform:uppercase;
+    color:rgba(246,244,241,0.28);
+    line-height:1.9;
+  }
+
+  /* ========== PRICE STATEMENT ========== */
+  .price-statement { max-width:600px; margin:0 auto; padding:4rem 2rem; text-align:center; }
+  .price-statement .section-label { display:block; margin-bottom:1.5rem; }
+  .price-big {
+    font-family:var(--price);
+    font-size:clamp(5.5rem,14vw,9rem);
+    font-weight:400; color:var(--text);
+    line-height:1; margin:0 0 1.8rem;
+    letter-spacing:-0.02em;
+  }
+  .price-statement-desc { font-size:0.9rem; color:var(--text-muted); line-height:2.1; margin-bottom:2rem; }
+  .price-statement-founders { font-family:var(--serif); font-size:1rem; font-style:italic; color:var(--text-muted); }
+
+  /* Decorative "925" behind specs */
+  .specs { position:relative; overflow:hidden; }
+  .specs::before {
+    content:'925';
+    position:absolute; right:-1.5rem; top:50%;
+    transform:translateY(-50%);
+    font-family:var(--price); font-size:18rem; font-weight:400;
+    color:var(--text); opacity:0.025; line-height:1;
+    pointer-events:none; user-select:none;
+  }
+
   /* ========== FOUNDER STORY ========== */
   .founder-story { max-width:680px; margin:0 auto; padding:2.5rem 2rem; }
   .founder-inner { border-left:1px solid var(--border); padding-left:2rem; }
@@ -311,12 +412,26 @@
     .community-stat:last-child { border-bottom:none; }
     .lifestyle-img { height:280px; }
     .marquee-strip { margin:0.5rem 0; }
+    .features-editorial { grid-template-columns:1fr; }
+    .feat-divider { width:100%; height:1px; margin:0; align-self:auto; }
+    .feat-item { padding:1.5rem 0; }
+    .community-inner { grid-template-columns:1fr; }
+    .community-fig { border-right:none; border-bottom:1px solid rgba(246,244,241,0.07); padding:2rem; }
+    .community-fig:last-child { border-bottom:none; }
+    .specs::before { font-size:8rem; }
     /* Bottom padding so sticky CTA doesn't overlap footer content */
     footer { padding-bottom:calc(5rem + env(safe-area-inset-bottom)); }
   }
 </style>
 </head>
 <body>
+
+  <!-- Custom cursor -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- Page load curtain -->
+  <div id="pageCurtain"></div>
 
   <div class="dateline" id="dateline">Aurean <span>|</span> Spring 2026</div>
 
@@ -376,37 +491,41 @@
   </div>
 
   <!-- FEATURES -->
-  <div class="features reveal-stagger">
-    <div class="feature">
-      <div class="feature-num">3</div>
-      <div class="feature-unit">Seconds</div>
-      <p>Slides over your Oura Ring from the top. No tools. No adhesive. On and off whenever you want.</p>
+  <div class="features-editorial reveal-stagger">
+    <div class="feat-item">
+      <div class="feat-num">3</div>
+      <div class="feat-unit">Seconds to wear</div>
+      <p>Slides over your Oura Ring Gen 4 from the top. No tools, no adhesive. On and off whenever you want.</p>
     </div>
-    <div class="feature">
-      <div class="feature-num">0</div>
-      <div class="feature-unit">Sensors blocked</div>
-      <p>Open bottom design. Health tracking, sleep data, heart rate, SpO2, and charging all work perfectly.</p>
+    <div class="feat-divider"></div>
+    <div class="feat-item">
+      <div class="feat-num">0</div>
+      <div class="feat-unit">Sensors blocked</div>
+      <p>Open bottom design. Sleep, heart rate, SpO2, body temperature, and charging all work exactly as normal.</p>
     </div>
-    <div class="feature">
-      <div class="feature-num">925</div>
-      <div class="feature-unit">Sterling silver</div>
-      <p>Rhodium-plated sterling silver with a hand-sculpted liquid texture. Real jewelry, crafted to last.</p>
+    <div class="feat-divider"></div>
+    <div class="feat-item">
+      <div class="feat-num">925</div>
+      <div class="feat-unit">Sterling silver</div>
+      <p>Rhodium-plated with a hand-sculpted liquid texture. Real jewelry, built to last years.</p>
     </div>
   </div>
 
   <!-- COMMUNITY STATS -->
-  <div class="community-stats reveal">
-    <div class="community-stat">
-      <div class="community-stat-num">5.5M+</div>
-      <div class="community-stat-label">Oura Ring owners<br>worldwide</div>
-    </div>
-    <div class="community-stat">
-      <div class="community-stat-num">$300–400</div>
-      <div class="community-stat-label">what you already<br>spent on your ring</div>
-    </div>
-    <div class="community-stat">
-      <div class="community-stat-num">#1</div>
-      <div class="community-stat-label">best-selling smart ring<br>in the world</div>
+  <div class="community-editorial">
+    <div class="community-inner reveal-stagger">
+      <div class="community-fig">
+        <div class="community-num">5.5M+</div>
+        <div class="community-label">Oura Ring owners<br>worldwide</div>
+      </div>
+      <div class="community-fig">
+        <div class="community-num">$300–400</div>
+        <div class="community-label">what you already<br>spent on your ring</div>
+      </div>
+      <div class="community-fig">
+        <div class="community-num">#1</div>
+        <div class="community-label">best-selling smart ring<br>in the world</div>
+      </div>
     </div>
   </div>
 
@@ -470,15 +589,12 @@
 
   <div class="divider"><div class="divider-line"></div><div class="divider-symbol">&middot;</div><div class="divider-line"></div></div>
 
-  <!-- PRICE ANCHOR -->
-  <div class="anchor-section reveal">
-    <h2 class="section-title">Sterling silver craftsmanship.<br>Honest pricing.</h2>
-    <div class="anchor-compare">
-      <div class="anchor-them"><div class="anchor-price">$329</div><div class="anchor-label">Other ring covers</div><div class="anchor-range">Competitors charge $250&ndash;$350</div></div>
-      <div class="anchor-vs">vs</div>
-      <div class="anchor-us"><div class="anchor-price">$148</div><div class="anchor-label">Aurean Cloak</div></div>
-    </div>
-    <p class="anchor-note">Same quality materials. Without the designer markup.</p>
+  <!-- PRICE STATEMENT -->
+  <div class="price-statement reveal">
+    <span class="section-label">Pricing</span>
+    <p class="price-big">$148</p>
+    <p class="price-statement-desc">Sterling Silver 925, rhodium-plated.<br>Hand-sculpted. Under 4 grams.<br>The price reflects the work, not a brand name.</p>
+    <span class="price-statement-founders">Founders lock in $128 &mdash; save $20</span>
   </div>
 
   <!-- FAQ -->
@@ -669,6 +785,34 @@
   </div>
 
   <script>
+    // ─── PAGE CURTAIN ────────────────────────────────────────────────────────
+    (function() {
+      const c = document.getElementById('pageCurtain');
+      requestAnimationFrame(() => requestAnimationFrame(() => {
+        c.classList.add('gone');
+      }));
+      setTimeout(() => { if (c.parentNode) c.parentNode.removeChild(c); }, 1200);
+    })();
+
+    // ─── CUSTOM CURSOR ───────────────────────────────────────────────────────
+    (function() {
+      const dot  = document.getElementById('cursorDot');
+      const ring = document.getElementById('cursorRing');
+      if (!dot || !ring) return;
+      let mx = -200, my = -200, rx = -200, ry = -200;
+      document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+      (function tick() {
+        rx += (mx - rx) * 0.11; ry += (my - ry) * 0.11;
+        dot.style.left  = mx + 'px'; dot.style.top  = my + 'px';
+        ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
+        requestAnimationFrame(tick);
+      })();
+      document.querySelectorAll('a, button, .faq-q, .step, .spec, select, input, .feat-item').forEach(el => {
+        el.addEventListener('mouseenter', () => ring.classList.add('expand'));
+        el.addEventListener('mouseleave', () => ring.classList.remove('expand'));
+      });
+    })();
+
     // ─── CONFIG ─────────────────────────────────────────────────────────────
     // Update WAITLIST_COUNT weekly by checking your Formspree / Airtable.
     // The badge only appears once count reaches SHOW_COUNTER_AT.
@@ -699,6 +843,19 @@
       entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
     }, { threshold: 0.12, rootMargin: '0px 0px -30px 0px' });
     document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => observer.observe(el));
+
+    // Lifestyle image parallax
+    const lifestyleImg = document.querySelector('.lifestyle-img');
+    if (lifestyleImg) {
+      window.addEventListener('scroll', () => {
+        const rect = lifestyleImg.getBoundingClientRect();
+        if (rect.bottom > 0 && rect.top < window.innerHeight) {
+          const progress = (window.innerHeight - rect.top) / (window.innerHeight + rect.height);
+          const y = (progress - 0.5) * 70;
+          lifestyleImg.style.backgroundPositionY = 'calc(50% + ' + y + 'px)';
+        }
+      }, { passive: true });
+    }
 
     // Size note — conditional messaging based on selection
     const sizeSelect   = document.getElementById('field-size');
