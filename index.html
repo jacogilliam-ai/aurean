@@ -285,24 +285,19 @@
   }
   .feat-item p { font-size:0.85rem; color:var(--text-muted); line-height:1.85; }
 
-  /* ========== COMMUNITY EDITORIAL ========== */
-  .community-editorial { background:var(--bg-dark); padding:5rem 2rem; margin:2rem 0; }
-  .community-inner { max-width:900px; margin:0 auto; display:grid; grid-template-columns:repeat(3,1fr); }
-  .community-fig { text-align:center; padding:1.5rem 1.2rem; border-right:1px solid rgba(246,244,241,0.07); }
-  .community-fig:last-child { border-right:none; }
-  .community-num {
-    font-family:var(--price);
-    font-size:clamp(1.8rem,3.2vw,2.8rem);
-    font-weight:400; color:var(--text-light);
-    line-height:1; margin-bottom:1rem;
-    white-space:nowrap;
+  /* ========== BRAND STATEMENT ========== */
+  .brand-statement { background:var(--bg-dark); padding:7rem 2rem; margin:2rem 0; }
+  .brand-statement-inner { max-width:680px; margin:0 auto; text-align:center; }
+  .brand-rule { height:1px; background:rgba(246,244,241,0.1); max-width:60px; margin:2.8rem auto; }
+  .brand-line {
+    font-family:var(--serif);
+    font-size:clamp(2rem,4.2vw,3.2rem);
+    font-weight:400;
+    color:var(--text-light);
+    line-height:1.5;
+    letter-spacing:-0.01em;
   }
-  .community-label {
-    font-size:0.6rem; letter-spacing:0.2em;
-    text-transform:uppercase;
-    color:rgba(246,244,241,0.28);
-    line-height:1.9;
-  }
+  .brand-line em { font-style:italic; }
 
   /* ========== PRICE STATEMENT ========== */
   .price-statement { max-width:600px; margin:0 auto; padding:4rem 2rem; text-align:center; }
@@ -385,8 +380,7 @@
     .hero { padding-top:clamp(8rem,10vw,11rem); }
     .feat-divider { margin:0 1.5rem; }
     .elevation { gap:2.5rem; }
-    .community-editorial { padding:3.5rem 2rem; }
-    .community-fig { padding:1rem 1.2rem; }
+    .brand-statement { padding:5rem 2rem; }
     .price-statement { padding:3rem 2rem; }
     model-viewer { height:420px; }
   }
@@ -419,9 +413,6 @@
     .features-editorial { grid-template-columns:1fr; }
     .feat-divider { width:100%; height:1px; margin:0; align-self:auto; }
     .feat-item { padding:1.5rem 0; }
-    .community-inner { grid-template-columns:1fr; }
-    .community-fig { border-right:none; border-bottom:1px solid rgba(246,244,241,0.07); padding:2rem; }
-    .community-fig:last-child { border-bottom:none; }
 
     /* Bottom padding so sticky CTA doesn't overlap footer content */
     footer { padding-bottom:calc(5rem + env(safe-area-inset-bottom)); }
@@ -515,21 +506,12 @@
     </div>
   </div>
 
-  <!-- COMMUNITY STATS -->
-  <div class="community-editorial">
-    <div class="community-inner reveal-stagger">
-      <div class="community-fig">
-        <div class="community-num">5.5M+</div>
-        <div class="community-label">Oura Ring owners<br>worldwide</div>
-      </div>
-      <div class="community-fig">
-        <div class="community-num">$300–$400</div>
-        <div class="community-label">what you already<br>spent on your ring</div>
-      </div>
-      <div class="community-fig">
-        <div class="community-num">#1</div>
-        <div class="community-label">best-selling smart ring<br>in the world</div>
-      </div>
+  <!-- BRAND STATEMENT -->
+  <div class="brand-statement">
+    <div class="brand-statement-inner reveal">
+      <div class="brand-rule"></div>
+      <p class="brand-line">Already on your finger.<br><em>Now wearing jewelry.</em></p>
+      <div class="brand-rule"></div>
     </div>
   </div>
 
