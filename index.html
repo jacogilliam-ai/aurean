@@ -317,16 +317,6 @@
   .price-statement-desc { font-size:0.9rem; color:var(--text-muted); line-height:2.1; margin-bottom:2rem; }
   .price-statement-founders { font-family:var(--serif); font-size:1rem; font-style:italic; color:var(--text-muted); }
 
-  /* Decorative "925" behind specs */
-  .specs { position:relative; overflow:hidden; }
-  .specs::before {
-    content:'925';
-    position:absolute; right:-1.5rem; top:50%;
-    transform:translateY(-50%);
-    font-family:var(--price); font-size:18rem; font-weight:400;
-    color:var(--text); opacity:0.025; line-height:1;
-    pointer-events:none; user-select:none;
-  }
 
   /* ========== FOUNDER STORY ========== */
   .founder-story { max-width:680px; margin:0 auto; padding:2.5rem 2rem; }
@@ -432,7 +422,7 @@
     .community-inner { grid-template-columns:1fr; }
     .community-fig { border-right:none; border-bottom:1px solid rgba(246,244,241,0.07); padding:2rem; }
     .community-fig:last-child { border-bottom:none; }
-    .specs::before { font-size:8rem; }
+
     /* Bottom padding so sticky CTA doesn't overlap footer content */
     footer { padding-bottom:calc(5rem + env(safe-area-inset-bottom)); }
   }
