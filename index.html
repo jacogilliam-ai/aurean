@@ -855,7 +855,7 @@
         const rect = lifestyleImg.getBoundingClientRect();
         if (rect.bottom > 0 && rect.top < window.innerHeight) {
           const progress = (window.innerHeight - rect.top) / (window.innerHeight + rect.height);
-          const y = (0.5 - progress) * 70;
+          const y = (progress - 0.5) * 70;
           lifestyleImg.style.backgroundPositionY = 'calc(50% + ' + y + 'px)';
         }
       }, { passive: true });
