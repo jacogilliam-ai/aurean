@@ -332,9 +332,6 @@
   .faq-item.open .faq-a { max-height:200px; }
   .faq-a p { font-size:0.9rem; color:var(--text-muted); line-height:1.85; padding-bottom:1.4rem; }
 
-  /* ========== SCARCITY ========== */
-  .scarcity-note { font-size:0.65rem; letter-spacing:0.15em; text-transform:uppercase; color:rgba(246,244,241,0.3); margin-bottom:1rem; }
-
   /* ========== INLINE FORM ERROR ========== */
   .form-submit-error { display:none; font-size:0.75rem; color:rgba(220,120,100,0.8); text-align:center; margin-top:0.75rem; line-height:1.6; }
   .form-submit-error.visible { display:block; }
@@ -621,7 +618,6 @@
   <div class="waitlist" id="waitlist">
     <div class="waitlist-badge">Founders Pricing &mdash; Limited Availability</div>
     <h2 class="section-title">Join the Founders.</h2>
-    <p class="scarcity-note" id="scarcityNote">Founders list — 40 spots total</p>
     <p class="section-subtitle">Be first to order when we launch. Founders lock in $20 off.</p>
 
     <!-- Social proof counter — shown only when WAITLIST_COUNT >= SHOW_COUNTER_AT -->
@@ -903,16 +899,6 @@
       document.getElementById('utm_medium').value   = m;
       document.getElementById('utm_campaign').value = c;
     })();
-
-    // Scarcity note — update text once count > 0
-    const scarcityNote = document.getElementById('scarcityNote');
-    const FOUNDERS_SPOTS = 40;
-    if (WAITLIST_COUNT > 0) {
-      const remaining = Math.max(0, FOUNDERS_SPOTS - WAITLIST_COUNT);
-      scarcityNote.textContent = remaining > 0
-        ? WAITLIST_COUNT + ' of ' + FOUNDERS_SPOTS + ' spots claimed'
-        : 'Founders list full — join the waitlist below';
-    }
 
     // FAQ accordion
     document.querySelectorAll('.faq-q').forEach(btn => {
